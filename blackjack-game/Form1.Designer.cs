@@ -47,15 +47,13 @@
             this.btn_decreaseBet = new System.Windows.Forms.Button();
             this.lbl_totalBet = new System.Windows.Forms.Label();
             this.lbl_betAmount = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pb_player1 = new System.Windows.Forms.PictureBox();
-            this.pb_player = new System.Windows.Forms.PictureBox();
             this.pb_banker = new System.Windows.Forms.PictureBox();
+            this.pb_player = new System.Windows.Forms.PictureBox();
+            this.pb_player1 = new System.Windows.Forms.PictureBox();
             this.navbar.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -158,6 +156,7 @@
             this.btn_hit.TabIndex = 2;
             this.btn_hit.Text = "Hit";
             this.btn_hit.UseVisualStyleBackColor = true;
+            this.btn_hit.Click += new System.EventHandler(this.btn_hit_Click);
             // 
             // btn_stand
             // 
@@ -212,53 +211,44 @@
             this.lbl_betAmount.Text = "${BETAMOUNT}";
             this.lbl_betAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.pb_player1);
-            this.panel1.Controls.Add(this.pb_player);
-            this.panel1.Controls.Add(this.pb_banker);
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(834, 368);
-            this.panel1.TabIndex = 8;
-            // 
-            // pb_player1
-            // 
-            this.pb_player1.Location = new System.Drawing.Point(117, 153);
-            this.pb_player1.Name = "pb_player1";
-            this.pb_player1.Size = new System.Drawing.Size(108, 144);
-            this.pb_player1.TabIndex = 2;
-            this.pb_player1.TabStop = false;
-            // 
-            // pb_player
-            // 
-            this.pb_player.Location = new System.Drawing.Point(3, 153);
-            this.pb_player.Name = "pb_player";
-            this.pb_player.Size = new System.Drawing.Size(108, 144);
-            this.pb_player.TabIndex = 1;
-            this.pb_player.TabStop = false;
-            // 
             // pb_banker
             // 
-            this.pb_banker.Location = new System.Drawing.Point(3, 3);
+            this.pb_banker.Location = new System.Drawing.Point(12, 28);
             this.pb_banker.Name = "pb_banker";
             this.pb_banker.Size = new System.Drawing.Size(108, 144);
             this.pb_banker.TabIndex = 0;
             this.pb_banker.TabStop = false;
             // 
+            // pb_player
+            // 
+            this.pb_player.Location = new System.Drawing.Point(12, 178);
+            this.pb_player.Name = "pb_player";
+            this.pb_player.Size = new System.Drawing.Size(108, 144);
+            this.pb_player.TabIndex = 1;
+            this.pb_player.TabStop = false;
+            // 
+            // pb_player1
+            // 
+            this.pb_player1.Location = new System.Drawing.Point(126, 178);
+            this.pb_player1.Name = "pb_player1";
+            this.pb_player1.Size = new System.Drawing.Size(108, 144);
+            this.pb_player1.TabIndex = 2;
+            this.pb_player1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.lbl_betAmount);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_increaseBet);
             this.Controls.Add(this.lbl_totalBet);
+            this.Controls.Add(this.pb_player1);
             this.Controls.Add(this.btn_stand);
+            this.Controls.Add(this.pb_player);
             this.Controls.Add(this.btn_decreaseBet);
+            this.Controls.Add(this.pb_banker);
             this.Controls.Add(this.navbar);
             this.Controls.Add(this.btn_hit);
             this.MaximizeBox = false;
@@ -268,10 +258,9 @@
             this.Text = "Blackjack";
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,10 +284,9 @@
         private Button btn_decreaseBet;
         private Label lbl_totalBet;
         private Label lbl_betAmount;
-        private Panel panel1;
         private ToolStripMenuItem changeBackgroundColourToolStripMenuItem;
         private PictureBox pb_banker;
-        private PictureBox pb_player1;
         private PictureBox pb_player;
+        private PictureBox pb_player1;
     }
 }

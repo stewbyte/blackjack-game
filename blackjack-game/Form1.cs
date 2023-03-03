@@ -1,4 +1,5 @@
 using blackjack_game.Properties;
+using System.Windows.Forms;
 
 namespace blackjack_game
 {
@@ -10,6 +11,9 @@ namespace blackjack_game
 
         int playerCardSum;
         int bankerCardSum;
+        bool gameStarted;
+
+        Random random = new Random();
 
         List<int> usedCards = new List<int>();
         List<Card> playerCards = new List<Card>() 
@@ -102,6 +106,40 @@ namespace blackjack_game
             pictureBox.ImageLocation = "Resources/Images/BR.png";
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+        void ResetGame()
+        {
+            gameStarted = false;
+            playerCardSum = 0;
+            bankerCardSum = 0;
+            usedCards.Clear();
+            playerCards.Clear();
+            bankerCards.Clear();
+            playerPictureBox.Clear();
+            bankerPictureBox.Clear();
+            
+
+            DisplayCardBack(pb_banker);
+            DisplayCardBack(pb_player);
+            DisplayCardBack(pb_player1);
+
+            btn_hit.Text = "Start";
+        }
+
+        void SumUpCards()
+        {
+            for (int i = 0; i < playerCards.Count; i++)
+            {
+                playerCardSum += playerCards[i].Value;
+            }
+        }
+
+        private int DrawRandomCard()
+        {
+            int randomCard;
+            randomCard = random.Next(0, cardDeck.Count);
+
+            return randomCard;
+        }
 
         public Form1()
         {
@@ -113,20 +151,6 @@ namespace blackjack_game
             ResetGame();
         }
 
-        void ResetGame()
-        {
-            playerCardSum = 0;
-            bankerCardSum = 0;
-            usedCards.Clear();
-            playerCards.Clear();
-            bankerCards.Clear();
-
-            DisplayCardBack(pb_banker);
-            DisplayCardBack(pb_player);
-            DisplayCardBack(pb_player1);
-
-            btn_hit.Text = "Start ";
-        }
 
         private void btn_increaseBet_Click(object sender, EventArgs e)
         {
@@ -166,6 +190,49 @@ namespace blackjack_game
             }
             betAmount = Math.Clamp(betAmount, 5, balance);
             UpdateBetLabel();
+        }
+
+        private void btn_hit_Click(object sender, EventArgs e)
+        {
+            if (gameStarted)
+            {
+                int randomPick = DrawRandomCard();
+                Card card = cardDeck[randomPick];
+                usedCards.Add(randomPick);
+
+                if (usedCards.Contains(randomPick)) randomPick = DrawRandomCard();
+
+                PictureBox pb = new PictureBox();
+                pb.Width = 108;
+                pb.Height = 144;
+                pb.Location = new Point(240 + playerPictureBox.Count * 115 , 178);
+                pb.ImageLocation = card.Image;
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                pb.BringToFront();
+                this.Controls.Add(pb);
+
+                playerPictureBox.Add(pb);
+
+                playerCards.Add(card);
+                SumUpCards();
+
+                if (playerCardSum > 21)
+                {
+                    MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ResetGame();
+                }
+                else if (playerCardSum == 21)
+                {
+                    MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ResetGame();
+                }
+
+            }
+            else
+            {
+                gameStarted = true;
+                btn_hit.Text = "Hit";
+            }
         }
     }
 }
