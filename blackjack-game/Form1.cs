@@ -84,19 +84,12 @@ namespace blackjack_game
         List<PictureBox> bankerPictureBox = new List<PictureBox>();
         List<PictureBox> playerPictureBox = new List<PictureBox>();
 
-        int AddBalance(int amount = 0)
+        int ModifyBalance(int amount)
         {
-            balance = amount + balance;
-
+            balance += amount;
             return balance;
         }
 
-        int RemoveBalance(int amount = 0)
-        {
-            balance = amount - balance;
-
-            return balance;
-        }
         void UpdateBetLabel()
         {
             lbl_betAmount.Text = $"${betAmount}";
