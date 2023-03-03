@@ -48,10 +48,14 @@
             this.lbl_totalBet = new System.Windows.Forms.Label();
             this.lbl_betAmount = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pb_player1 = new System.Windows.Forms.PictureBox();
+            this.pb_player = new System.Windows.Forms.PictureBox();
+            this.pb_banker = new System.Windows.Forms.PictureBox();
             this.navbar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             this.SuspendLayout();
             // 
             // navbar
@@ -85,14 +89,14 @@
             // btn_website
             // 
             this.btn_website.Name = "btn_website";
-            this.btn_website.Size = new System.Drawing.Size(180, 22);
+            this.btn_website.Size = new System.Drawing.Size(116, 22);
             this.btn_website.Text = "Website";
             // 
             // forfeitToolStripMenuItem
             // 
             this.forfeitToolStripMenuItem.Enabled = false;
             this.forfeitToolStripMenuItem.Name = "forfeitToolStripMenuItem";
-            this.forfeitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.forfeitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.forfeitToolStripMenuItem.Text = "Forfeit";
             // 
             // settingsToolStripMenuItem
@@ -101,7 +105,7 @@
             this.changeBackgroundColourToolStripMenuItem,
             this.deleteSaveDataToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // changeBackgroundColourToolStripMenuItem
@@ -212,19 +216,37 @@
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.BackColor = System.Drawing.Color.LightGray;
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pb_player1);
+            this.panel1.Controls.Add(this.pb_player);
+            this.panel1.Controls.Add(this.pb_banker);
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(834, 368);
             this.panel1.TabIndex = 8;
             // 
-            // pictureBox1
+            // pb_player1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(108, 144);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pb_player1.Location = new System.Drawing.Point(117, 153);
+            this.pb_player1.Name = "pb_player1";
+            this.pb_player1.Size = new System.Drawing.Size(108, 144);
+            this.pb_player1.TabIndex = 2;
+            this.pb_player1.TabStop = false;
+            // 
+            // pb_player
+            // 
+            this.pb_player.Location = new System.Drawing.Point(3, 153);
+            this.pb_player.Name = "pb_player";
+            this.pb_player.Size = new System.Drawing.Size(108, 144);
+            this.pb_player.TabIndex = 1;
+            this.pb_player.TabStop = false;
+            // 
+            // pb_banker
+            // 
+            this.pb_banker.Location = new System.Drawing.Point(3, 3);
+            this.pb_banker.Name = "pb_banker";
+            this.pb_banker.Size = new System.Drawing.Size(108, 144);
+            this.pb_banker.TabIndex = 0;
+            this.pb_banker.TabStop = false;
             // 
             // Form1
             // 
@@ -247,7 +269,9 @@
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +297,8 @@
         private Label lbl_betAmount;
         private Panel panel1;
         private ToolStripMenuItem changeBackgroundColourToolStripMenuItem;
-        private PictureBox pictureBox1;
+        private PictureBox pb_banker;
+        private PictureBox pb_player1;
+        private PictureBox pb_player;
     }
 }
