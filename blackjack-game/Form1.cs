@@ -6,16 +6,18 @@ namespace blackjack_game
         int betAmount = 5;
         int wins;
 
+        int playerCardSum;
+        int bankerCardSum;
+
+        List<int> usedCards = new List<int>();
         List<Card> playerCards = new List<Card>() 
         { 
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
-
         List<Card> bankerCards = new List<Card>() 
         { 
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
-
         List<Card> cardDeck = new List<Card>()
         {
                 // Clubs
@@ -78,6 +80,9 @@ namespace blackjack_game
                 new Card() { Value = 10, Name = "King Hearts", Image = "KH.png" },
                 new Card() { Value = 11, Name = "Ace Hearts", Image = "AH.png" }
         };
+
+        List<PictureBox> bankerPictureBox = new List<PictureBox>();
+        List<PictureBox> playerPictureBox = new List<PictureBox>();
 
         int AddBalance(int amount = 0)
         {
