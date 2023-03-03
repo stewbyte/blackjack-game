@@ -105,6 +105,15 @@ namespace blackjack_game
 
         }
 
+        void ResetGame()
+        {
+            playerCardSum = 0;
+            bankerCardSum = 0;
+            usedCards.Clear();
+            playerCards.Clear();
+            bankerCards.Clear();
+        }
+
         private void btn_increaseBet_Click(object sender, EventArgs e)
         {
             if (ModifierKeys.HasFlag(Keys.Shift))
