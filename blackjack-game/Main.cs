@@ -1,6 +1,6 @@
 namespace blackjack_game
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
         int balance = 100;
         int betAmount = 5;
@@ -177,7 +177,7 @@ namespace blackjack_game
             history.Items.Add($"Tied {playerCardSum} / {dealerCardSum}");
         }
 
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             lbl_balance.Text = $"Balance: ${balance}";
@@ -300,7 +300,7 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(126 + playerPictureBox.Count * 115, 178);
+                pb.Location = new Point(126 + dealerPictureBox.Count * 115, 28);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 

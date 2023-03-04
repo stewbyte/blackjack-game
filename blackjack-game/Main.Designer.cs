@@ -1,6 +1,6 @@
 ﻿namespace blackjack_game
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.navbar = new System.Windows.Forms.ToolStrip();
             this.dd_menu = new System.Windows.Forms.ToolStripDropDownButton();
             this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
