@@ -1,8 +1,3 @@
-using blackjack_game.Properties;
-using System.Reflection.Metadata;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-
 namespace blackjack_game
 {
     public partial class Form1 : Form
@@ -19,12 +14,12 @@ namespace blackjack_game
         Random random = new Random();
 
         List<int> usedCards = new List<int>();
-        List<Card> playerCards = new List<Card>() 
-        { 
+        List<Card> playerCards = new List<Card>()
+        {
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
-        List<Card> dealerCards = new List<Card>() 
-        { 
+        List<Card> dealerCards = new List<Card>()
+        {
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
         List<Card> cardDeck = new List<Card>()
@@ -246,7 +241,7 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(240 + playerPictureBox.Count * 115 , 178);
+                pb.Location = new Point(240 + playerPictureBox.Count * 115, 178);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -274,7 +269,7 @@ namespace blackjack_game
 
                 playerCards.Add(card2);
                 pb_player1.ImageLocation = card2.Image;
-                pb_player1.SizeMode = PictureBoxSizeMode.StretchImage; 
+                pb_player1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 int dealerHoleCard = DrawRandomCard();
 
