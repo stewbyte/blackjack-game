@@ -50,7 +50,7 @@
             this.pb_player1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.list1 = new System.Windows.Forms.ListView();
+            this.history = new System.Windows.Forms.ListView();
             this.Card = new System.Windows.Forms.ColumnHeader();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_status = new System.Windows.Forms.Label();
@@ -252,24 +252,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel2.Controls.Add(this.list1);
+            this.panel2.Controls.Add(this.history);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(12, 359);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 127);
             this.panel2.TabIndex = 9;
             // 
-            // list1
+            // history
             // 
-            this.list1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.history.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Card});
-            this.list1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.list1.Location = new System.Drawing.Point(656, 0);
-            this.list1.Name = "list1";
-            this.list1.Size = new System.Drawing.Size(204, 127);
-            this.list1.TabIndex = 1;
-            this.list1.UseCompatibleStateImageBehavior = false;
-            this.list1.View = System.Windows.Forms.View.Details;
+            this.history.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.history.Location = new System.Drawing.Point(656, 0);
+            this.history.Name = "history";
+            this.history.Size = new System.Drawing.Size(204, 127);
+            this.history.TabIndex = 1;
+            this.history.UseCompatibleStateImageBehavior = false;
+            this.history.View = System.Windows.Forms.View.Details;
             // 
             // Card
             // 
@@ -364,7 +364,7 @@
         private PictureBox pictureBox1;
         private Label lbl_status;
         private Panel panel3;
-        private ListView list1;
+        private ListView history;
         private ColumnHeader Card;
     }
 }

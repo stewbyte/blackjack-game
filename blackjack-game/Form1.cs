@@ -144,13 +144,9 @@ namespace blackjack_game
             for (int i = 0; i < cards.Count; i++)
             {
                 sum += cards[i].Value;
-                list1.Items.Add(cards[i].Name);
             }
-        }
 
-        void DoWinConditionCheck(List<Card> card)
-        {
-
+            lbl_status.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
         }
 
         int DrawRandomCard()
@@ -171,11 +167,19 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            history.Items.Add($"Win {playerCardSum} / {dealerCardSum}");
         }
 
         void LoseGame()
         {
             lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            history.Items.Add($"Loss {playerCardSum} / {dealerCardSum}");
+        }
+
+        void TieGame()
+        {
+            lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            history.Items.Add($"Tied {playerCardSum} / {dealerCardSum}");
         }
 
         public Form1()
@@ -281,45 +285,53 @@ namespace blackjack_game
                 pb_banker.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
+            SumCards(playerCards, ref playerCardSum);
+            SumCards(dealerCards, ref dealerCardSum);
+
             if (playerCardSum > 21)
             {
                 LoseGame();
                 ResetGame();
             }
-            else if (playerCardSum == 21)
-            {
-                WinGame();
-                ResetGame();
-            }
-
-            SumCards(playerCards, ref playerCardSum);
-            SumCards(dealerCards, ref dealerCardSum);
-            lbl_status.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
         }
 
         private void btn_stand_Click(object sender, EventArgs e)
         {
-            if (gameStarted)
+            if (dealerCardSum <= 16)
             {
-                while (dealerCardSum <= 16)
-                {
-                    int randomCard = DrawRandomCard();
-                    Card card = cardDeck[randomCard];
+                int randomCard = DrawRandomCard();
+                Card card = cardDeck[randomCard];
 
-                    PictureBox pb = new PictureBox();
-                    pb.Width = 108;
-                    pb.Height = 144;
-                    pb.Location = new Point(126 + playerPictureBox.Count * 115, 178);
-                    pb.ImageLocation = card.Image;
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                PictureBox pb = new PictureBox();
+                pb.Width = 108;
+                pb.Height = 144;
+                pb.Location = new Point(126 + playerPictureBox.Count * 115, 178);
+                pb.ImageLocation = card.Image;
+                pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
-                    this.Controls.Add(pb);
+                this.Controls.Add(pb);
 
-                    dealerPictureBox.Add(pb);
-                    dealerCards.Add(card);
-                }
-                SumCards(playerCards, ref playerCardSum);
-                SumCards(dealerCards, ref dealerCardSum);
+                dealerPictureBox.Add(pb);
+                dealerCards.Add(card);
+            }
+
+            SumCards(playerCards, ref playerCardSum);
+            SumCards(dealerCards, ref dealerCardSum);
+
+            if (playerCardSum == 21 || dealerCardSum == 21)
+            {
+                TieGame();
+                ResetGame();
+            }
+            else if (dealerCardSum > 21 || playerCardSum > dealerCardSum)
+            {
+                WinGame();
+                ResetGame();
+            }
+            else
+            {
+                LoseGame();
+                ResetGame();
             }
         }
     }
