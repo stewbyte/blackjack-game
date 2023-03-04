@@ -50,10 +50,12 @@
             this.pb_banker = new System.Windows.Forms.PictureBox();
             this.pb_player = new System.Windows.Forms.PictureBox();
             this.pb_player1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
@@ -67,7 +69,7 @@
             this.lbl_wins});
             this.navbar.Location = new System.Drawing.Point(0, 0);
             this.navbar.Name = "navbar";
-            this.navbar.Size = new System.Drawing.Size(834, 25);
+            this.navbar.Size = new System.Drawing.Size(884, 25);
             this.navbar.TabIndex = 1;
             // 
             // dd_menu
@@ -150,7 +152,7 @@
             // btn_hit
             // 
             this.btn_hit.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_hit.Location = new System.Drawing.Point(12, 399);
+            this.btn_hit.Location = new System.Drawing.Point(3, 3);
             this.btn_hit.Name = "btn_hit";
             this.btn_hit.Size = new System.Drawing.Size(125, 50);
             this.btn_hit.TabIndex = 2;
@@ -160,18 +162,20 @@
             // 
             // btn_stand
             // 
+            this.btn_stand.Enabled = false;
             this.btn_stand.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_stand.Location = new System.Drawing.Point(143, 399);
+            this.btn_stand.Location = new System.Drawing.Point(134, 3);
             this.btn_stand.Name = "btn_stand";
             this.btn_stand.Size = new System.Drawing.Size(125, 50);
             this.btn_stand.TabIndex = 3;
             this.btn_stand.Text = "Stand";
             this.btn_stand.UseVisualStyleBackColor = true;
+            this.btn_stand.Click += new System.EventHandler(this.btn_stand_Click);
             // 
             // btn_increaseBet
             // 
             this.btn_increaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_increaseBet.Location = new System.Drawing.Point(274, 399);
+            this.btn_increaseBet.Location = new System.Drawing.Point(265, 3);
             this.btn_increaseBet.Name = "btn_increaseBet";
             this.btn_increaseBet.Size = new System.Drawing.Size(50, 25);
             this.btn_increaseBet.TabIndex = 4;
@@ -182,7 +186,7 @@
             // btn_decreaseBet
             // 
             this.btn_decreaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_decreaseBet.Location = new System.Drawing.Point(274, 424);
+            this.btn_decreaseBet.Location = new System.Drawing.Point(265, 28);
             this.btn_decreaseBet.Name = "btn_decreaseBet";
             this.btn_decreaseBet.Size = new System.Drawing.Size(50, 25);
             this.btn_decreaseBet.TabIndex = 5;
@@ -193,7 +197,8 @@
             // lbl_totalBet
             // 
             this.lbl_totalBet.AutoSize = true;
-            this.lbl_totalBet.Location = new System.Drawing.Point(330, 399);
+            this.lbl_totalBet.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_totalBet.Location = new System.Drawing.Point(321, 3);
             this.lbl_totalBet.Name = "lbl_totalBet";
             this.lbl_totalBet.Size = new System.Drawing.Size(55, 15);
             this.lbl_totalBet.TabIndex = 6;
@@ -203,7 +208,8 @@
             // 
             this.lbl_betAmount.AutoSize = true;
             this.lbl_betAmount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_betAmount.Location = new System.Drawing.Point(330, 415);
+            this.lbl_betAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_betAmount.Location = new System.Drawing.Point(321, 21);
             this.lbl_betAmount.Name = "lbl_betAmount";
             this.lbl_betAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lbl_betAmount.Size = new System.Drawing.Size(194, 32);
@@ -235,25 +241,34 @@
             this.pb_player1.TabIndex = 2;
             this.pb_player1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel1.Controls.Add(this.btn_stand);
+            this.panel1.Controls.Add(this.lbl_totalBet);
+            this.panel1.Controls.Add(this.lbl_betAmount);
+            this.panel1.Controls.Add(this.btn_hit);
+            this.panel1.Controls.Add(this.btn_increaseBet);
+            this.panel1.Controls.Add(this.btn_decreaseBet);
+            this.panel1.Location = new System.Drawing.Point(12, 492);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(860, 57);
+            this.panel1.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.lbl_betAmount);
-            this.Controls.Add(this.btn_increaseBet);
-            this.Controls.Add(this.lbl_totalBet);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
+            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pb_player1);
-            this.Controls.Add(this.btn_stand);
             this.Controls.Add(this.pb_player);
-            this.Controls.Add(this.btn_decreaseBet);
             this.Controls.Add(this.pb_banker);
             this.Controls.Add(this.navbar);
-            this.Controls.Add(this.btn_hit);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(850, 500);
-            this.MinimumSize = new System.Drawing.Size(850, 500);
+            this.MaximumSize = new System.Drawing.Size(900, 600);
+            this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Form1";
             this.Text = "Blackjack";
             this.navbar.ResumeLayout(false);
@@ -261,6 +276,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -288,5 +305,6 @@
         private PictureBox pb_banker;
         private PictureBox pb_player;
         private PictureBox pb_player1;
+        private Panel panel1;
     }
 }

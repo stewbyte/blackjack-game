@@ -10,7 +10,7 @@ namespace blackjack_game
         int wins;
 
         int playerCardSum;
-        int bankerCardSum;
+        int dealerCardSum;
         bool gameStarted;
 
         Random random = new Random();
@@ -20,7 +20,7 @@ namespace blackjack_game
         { 
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
-        List<Card> bankerCards = new List<Card>() 
+        List<Card> dealerCards = new List<Card>() 
         { 
             new Card() {Value = 0, Name = "null", Image = "null"}
         };
@@ -87,7 +87,7 @@ namespace blackjack_game
                 new Card() {Value = 11, Name = "Ace Hearts", Image = "Resources/Images/AH.png"}
         };
 
-        List<PictureBox> bankerPictureBox = new List<PictureBox>();
+        List<PictureBox> dealerPictureBox = new List<PictureBox>();
         List<PictureBox> playerPictureBox = new List<PictureBox>();
 
         int ModifyBalance(int amount)
@@ -110,13 +110,23 @@ namespace blackjack_game
         {
             gameStarted = false;
             playerCardSum = 0;
-            bankerCardSum = 0;
+            dealerCardSum = 0;
             usedCards.Clear();
             playerCards.Clear();
-            bankerCards.Clear();
-            playerPictureBox.Clear();
-            bankerPictureBox.Clear();
-            
+            dealerCards.Clear();
+
+            foreach (PictureBox pb in playerPictureBox)
+            {
+                this.Controls.Remove(pb);
+            }
+            playerPictureBox = new List<PictureBox>();
+
+            foreach (PictureBox pb in dealerPictureBox)
+            {
+                this.Controls.Remove(pb);
+            }
+            dealerPictureBox = new List<PictureBox>();
+
 
             DisplayCardBack(pb_banker);
             DisplayCardBack(pb_player);
@@ -137,6 +147,13 @@ namespace blackjack_game
         {
             int randomCard;
             randomCard = random.Next(0, cardDeck.Count);
+
+            while (usedCards.Contains(randomCard))
+            {
+                randomCard = random.Next(0, cardDeck.Count);
+            }
+
+            usedCards.Add(randomCard);
 
             return randomCard;
         }
@@ -198,9 +215,6 @@ namespace blackjack_game
             {
                 int randomPick = DrawRandomCard();
                 Card card = cardDeck[randomPick];
-                usedCards.Add(randomPick);
-
-                if (usedCards.Contains(randomPick)) randomPick = DrawRandomCard();
 
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
@@ -218,7 +232,7 @@ namespace blackjack_game
 
                 if (playerCardSum > 21)
                 {
-                    MessageBox.Show("You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show($"You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     ResetGame();
                 }
                 else if (playerCardSum == 21)
@@ -232,6 +246,40 @@ namespace blackjack_game
             {
                 gameStarted = true;
                 btn_hit.Text = "Hit";
+
+                int holeCard1 = DrawRandomCard();
+                Card card1 = cardDeck[holeCard1];
+
+                int holeCard2 = DrawRandomCard();
+                Card card2 = cardDeck[holeCard2];
+
+                playerCards.Add(card1);
+                pb_player.ImageLocation = card1.Image;
+                pb_player.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                playerCards.Add(card2);
+                pb_player1.ImageLocation = card2.Image;
+                pb_player1.SizeMode = PictureBoxSizeMode.StretchImage; 
+
+                int dealerHoleCard = DrawRandomCard();
+
+                Card card3 = cardDeck[dealerHoleCard];
+
+                dealerCards.Add(card3);
+                pb_banker.ImageLocation = card3.Image;
+                pb_banker.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+        }
+
+        private void btn_stand_Click(object sender, EventArgs e)
+        {
+            if (gameStarted)
+            {
+                while (dealerCardSum <= 17)
+                {
+                    int randomCard = DrawRandomCard();
+                    Card card = cardDeck[randomCard];
+                }
             }
         }
     }
