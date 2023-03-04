@@ -1,5 +1,7 @@
 using blackjack_game.Properties;
+using System.Reflection.Metadata;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace blackjack_game
 {
@@ -8,6 +10,7 @@ namespace blackjack_game
         int balance = 100;
         int betAmount = 5;
         int wins;
+        int gamesPlayed;
 
         int playerCardSum;
         int dealerCardSum;
@@ -106,6 +109,7 @@ namespace blackjack_game
             pictureBox.ImageLocation = "Resources/Images/BR.png";
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+
         void ResetGame()
         {
             gameStarted = false;
@@ -135,15 +139,21 @@ namespace blackjack_game
             btn_hit.Text = "Start";
         }
 
-        void SumUpCards()
+        void SumCards(List<Card> cards, ref int sum)
         {
-            for (int i = 0; i < playerCards.Count; i++)
+            for (int i = 0; i < cards.Count; i++)
             {
-                playerCardSum += playerCards[i].Value;
+                sum += cards[i].Value;
+                list1.Items.Add(cards[i].Name);
             }
         }
 
-        private int DrawRandomCard()
+        void DoWinConditionCheck(List<Card> card)
+        {
+
+        }
+
+        int DrawRandomCard()
         {
             int randomCard;
             randomCard = random.Next(0, cardDeck.Count);
@@ -158,16 +168,25 @@ namespace blackjack_game
             return randomCard;
         }
 
+        void WinGame()
+        {
+            lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+        }
+
+        void LoseGame()
+        {
+            lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+        }
+
         public Form1()
         {
             InitializeComponent();
-            lbl_welcome.Text = $"Welcome, {Environment.UserName}";
             lbl_balance.Text = $"Balance: ${balance}";
             lbl_wins.Text = $"Wins: {wins}";
+            lbl_status.Text = $"[Begin the game by pressing 'Start']";
             UpdateBetLabel();
             ResetGame();
         }
-
 
         private void btn_increaseBet_Click(object sender, EventArgs e)
         {
@@ -213,6 +232,10 @@ namespace blackjack_game
         {
             if (gameStarted)
             {
+                playerCards.Clear();
+                dealerCards.Clear();
+                usedCards.Clear();
+
                 int randomPick = DrawRandomCard();
                 Card card = cardDeck[randomPick];
 
@@ -222,29 +245,17 @@ namespace blackjack_game
                 pb.Location = new Point(240 + playerPictureBox.Count * 115 , 178);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                pb.BringToFront();
+
                 this.Controls.Add(pb);
 
                 playerPictureBox.Add(pb);
 
                 playerCards.Add(card);
-                SumUpCards();
-
-                if (playerCardSum > 21)
-                {
-                    MessageBox.Show($"You lose!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    ResetGame();
-                }
-                else if (playerCardSum == 21)
-                {
-                    MessageBox.Show("You win!", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    ResetGame();
-                }
-
             }
             else
             {
                 gameStarted = true;
+                btn_stand.Enabled = true;
                 btn_hit.Text = "Hit";
 
                 int holeCard1 = DrawRandomCard();
@@ -269,17 +280,46 @@ namespace blackjack_game
                 pb_banker.ImageLocation = card3.Image;
                 pb_banker.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+
+            if (playerCardSum > 21)
+            {
+                LoseGame();
+                ResetGame();
+            }
+            else if (playerCardSum == 21)
+            {
+                WinGame();
+                ResetGame();
+            }
+
+            SumCards(playerCards, ref playerCardSum);
+            SumCards(dealerCards, ref dealerCardSum);
+            lbl_status.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
         }
 
         private void btn_stand_Click(object sender, EventArgs e)
         {
             if (gameStarted)
             {
-                while (dealerCardSum <= 17)
+                while (dealerCardSum <= 16)
                 {
                     int randomCard = DrawRandomCard();
                     Card card = cardDeck[randomCard];
+
+                    PictureBox pb = new PictureBox();
+                    pb.Width = 108;
+                    pb.Height = 144;
+                    pb.Location = new Point(126 + playerPictureBox.Count * 115, 178);
+                    pb.ImageLocation = card.Image;
+                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    this.Controls.Add(pb);
+
+                    dealerPictureBox.Add(pb);
+                    dealerCards.Add(card);
                 }
+                SumCards(playerCards, ref playerCardSum);
+                SumCards(dealerCards, ref dealerCardSum);
             }
         }
     }

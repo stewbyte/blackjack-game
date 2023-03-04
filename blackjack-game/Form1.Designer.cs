@@ -36,8 +36,6 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeBackgroundColourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSaveDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_welcome = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.lbl_balance = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.lbl_wins = new System.Windows.Forms.ToolStripLabel();
@@ -51,19 +49,26 @@
             this.pb_player = new System.Windows.Forms.PictureBox();
             this.pb_player1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.list1 = new System.Windows.Forms.ListView();
+            this.Card = new System.Windows.Forms.ColumnHeader();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_status = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // navbar
             // 
             this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dd_menu,
-            this.lbl_welcome,
-            this.toolStripSeparator1,
             this.lbl_balance,
             this.toolStripSeparator2,
             this.lbl_wins});
@@ -120,17 +125,6 @@
             this.deleteSaveDataToolStripMenuItem.Name = "deleteSaveDataToolStripMenuItem";
             this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.deleteSaveDataToolStripMenuItem.Text = "Delete save data";
-            // 
-            // lbl_welcome
-            // 
-            this.lbl_welcome.Name = "lbl_welcome";
-            this.lbl_welcome.Size = new System.Drawing.Size(132, 22);
-            this.lbl_welcome.Text = "Welcome, {USERNAME}";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // lbl_balance
             // 
@@ -255,12 +249,70 @@
             this.panel1.Size = new System.Drawing.Size(860, 57);
             this.panel1.TabIndex = 8;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.list1);
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Location = new System.Drawing.Point(12, 359);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(860, 127);
+            this.panel2.TabIndex = 9;
+            // 
+            // list1
+            // 
+            this.list1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Card});
+            this.list1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.list1.Location = new System.Drawing.Point(656, 0);
+            this.list1.Name = "list1";
+            this.list1.Size = new System.Drawing.Size(204, 127);
+            this.list1.TabIndex = 1;
+            this.list1.UseCompatibleStateImageBehavior = false;
+            this.list1.View = System.Windows.Forms.View.Details;
+            // 
+            // Card
+            // 
+            this.Card.Width = 200;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::blackjack_game.Properties.Resources.Gregor;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 121);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbl_status
+            // 
+            this.lbl_status.AutoSize = true;
+            this.lbl_status.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_status.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_status.Location = new System.Drawing.Point(3, 3);
+            this.lbl_status.Name = "lbl_status";
+            this.lbl_status.Size = new System.Drawing.Size(279, 19);
+            this.lbl_status.TabIndex = 10;
+            this.lbl_status.Text = "[Press Start to start a game!]";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel3.Controls.Add(this.lbl_status);
+            this.panel3.Location = new System.Drawing.Point(12, 328);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(860, 25);
+            this.panel3.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pb_player1);
             this.Controls.Add(this.pb_player);
@@ -278,6 +330,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,9 +342,7 @@
         #endregion
         private ToolStrip navbar;
         private ToolStripDropDownButton dd_menu;
-        private ToolStripLabel lbl_welcome;
         private ToolStripMenuItem btn_website;
-        private ToolStripSeparator toolStripSeparator1;
         private ToolStripLabel lbl_balance;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel lbl_wins;
@@ -306,5 +360,11 @@
         private PictureBox pb_player;
         private PictureBox pb_player1;
         private Panel panel1;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        private Label lbl_status;
+        private Panel panel3;
+        private ListView list1;
+        private ColumnHeader Card;
     }
 }
