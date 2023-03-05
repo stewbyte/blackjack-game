@@ -99,6 +99,14 @@ namespace blackjack_game
             lbl_betAmount.Text = $"${betAmount}";
         }
 
+        void LogToHistory(string message)
+        {
+            string currentTime = DateTime.Now.ToString("HH:mm:ss");
+
+            historyList.Items.Add($"[{currentTime}: {message}]");
+
+        }
+
         void DisplayCardBack(PictureBox pictureBox)
         {
             pictureBox.ImageLocation = "Resources/Images/BR.png";
@@ -162,19 +170,19 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            history.Items.Add($"Win {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"won {playerCardSum} / {dealerCardSum}");
         }
 
         void LoseGame()
         {
             lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            history.Items.Add($"Loss {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"tied {playerCardSum} / {dealerCardSum}");
         }
 
         void TieGame()
         {
             lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            history.Items.Add($"Tied {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"lost {playerCardSum} / {dealerCardSum}");
         }
 
         public Main()

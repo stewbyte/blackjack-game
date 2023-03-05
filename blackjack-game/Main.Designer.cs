@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.navbar = new System.Windows.Forms.ToolStrip();
             this.dd_menu = new System.Windows.Forms.ToolStripDropDownButton();
             this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,9 +51,8 @@
             this.pb_player1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.history = new System.Windows.Forms.ListView();
-            this.Card = new System.Windows.Forms.ColumnHeader();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.historyList = new System.Windows.Forms.ListView();
             this.lbl_status = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.navbar.SuspendLayout();
@@ -64,6 +64,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "History";
+            this.columnHeader1.Width = 200;
             // 
             // navbar
             // 
@@ -246,34 +251,17 @@
             this.panel1.Controls.Add(this.btn_decreaseBet);
             this.panel1.Location = new System.Drawing.Point(12, 492);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 57);
+            this.panel1.Size = new System.Drawing.Size(654, 57);
             this.panel1.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel2.Controls.Add(this.history);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(12, 359);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(860, 127);
+            this.panel2.Size = new System.Drawing.Size(654, 127);
             this.panel2.TabIndex = 9;
-            // 
-            // history
-            // 
-            this.history.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Card});
-            this.history.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.history.Location = new System.Drawing.Point(656, 0);
-            this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(204, 127);
-            this.history.TabIndex = 1;
-            this.history.UseCompatibleStateImageBehavior = false;
-            this.history.View = System.Windows.Forms.View.Details;
-            // 
-            // Card
-            // 
-            this.Card.Width = 200;
             // 
             // pictureBox1
             // 
@@ -284,6 +272,25 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // historyList
+            // 
+            this.historyList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.historyList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.historyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.historyList.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.historyList.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.historyList.ForeColor = System.Drawing.SystemColors.Window;
+            this.historyList.FullRowSelect = true;
+            this.historyList.Location = new System.Drawing.Point(672, 328);
+            this.historyList.Name = "historyList";
+            this.historyList.Scrollable = false;
+            this.historyList.Size = new System.Drawing.Size(200, 221);
+            this.historyList.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.historyList.TabIndex = 1;
+            this.historyList.UseCompatibleStateImageBehavior = false;
+            this.historyList.View = System.Windows.Forms.View.Details;
             // 
             // lbl_status
             // 
@@ -302,15 +309,16 @@
             this.panel3.Controls.Add(this.lbl_status);
             this.panel3.Location = new System.Drawing.Point(12, 328);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(860, 25);
+            this.panel3.Size = new System.Drawing.Size(654, 25);
             this.panel3.TabIndex = 10;
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.historyList);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -321,7 +329,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Blackjack";
             this.navbar.ResumeLayout(false);
             this.navbar.PerformLayout();
@@ -364,7 +372,8 @@
         private PictureBox pictureBox1;
         private Label lbl_status;
         private Panel panel3;
-        private ListView history;
+        private ListView historyList;
         private ColumnHeader Card;
+        private ColumnHeader columnHeader1;
     }
 }
