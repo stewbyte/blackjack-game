@@ -5,6 +5,7 @@ namespace blackjack_game
         int balance;
         int betAmount = 0;
         int wins;
+        uint gamesPlayed;
         int firstTime;
 
         int playerCardSum;
@@ -93,11 +94,9 @@ namespace blackjack_game
         void WriteGameData()
         {
             string filePath = Path.Combine(Application.UserAppDataPath, "game_data.txt");
-            using (StreamWriter writer = new StreamWriter(filePath))
-            {
-                writer.WriteLine(balance);
-                writer.WriteLine(wins);
-            }
+            using StreamWriter writer = new StreamWriter(filePath);
+            writer.WriteLine(balance);
+            writer.WriteLine(wins);
         }
 
         void ReadGameData()
@@ -139,8 +138,18 @@ namespace blackjack_game
         {
             string currentTime = DateTime.Now.ToString("HH:mm:ss");
 
-            historyList.Items.Add($"[{currentTime}: {message}]");
+            TreeNode rootNode = new TreeNode($"Game: {gamesPlayed} / {message}");
 
+            historyTree.Nodes.Insert(0, rootNode);
+
+            TreeNode lastAddedNode = rootNode;
+
+            TreeNode childNode1 = new TreeNode($"You {playerCardSum} / {dealerCardSum} Dealer");
+            TreeNode childNode2 = new TreeNode($"Bet amount: ${betAmount}");
+            TreeNode childNode3 = new TreeNode($"Time: {currentTime}");
+            lastAddedNode.Nodes.Add(childNode1);
+            lastAddedNode.Nodes.Add(childNode2);
+            lastAddedNode.Nodes.Add(childNode3);
         }
 
         void DisplayCardBack(PictureBox pictureBox)
@@ -163,6 +172,7 @@ namespace blackjack_game
 
         void ResetGame()
         {
+            gamesPlayed++;
             WriteGameData();
             gameStarted = false;
             playerCardSum = 0;
@@ -242,26 +252,38 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"won: {playerCardSum} / {dealerCardSum} | +${betAmount}");
             lbl_wins.Text = $"Wins: {wins}";
             ModifyBalance(+(betAmount * 2));
 
             if (betAmount >= 5)
             {
                 wins++;
+                LogToHistory($"Won ${betAmount}");
+            }
+            else
+            {
+                LogToHistory($"Won");
             }
         }
 
         void LoseGame()
         {
             lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"lost: {playerCardSum} / {dealerCardSum} | -${betAmount}");
+
+            if (betAmount >= 5)
+            {
+                LogToHistory($"Lost ${betAmount}");
+            }
+            else
+            {
+                LogToHistory($"Lost");
+            }
         }
 
         void TieGame()
         {
             lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"tie: {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"Tied");
             ModifyBalance(+(betAmount));
         }
 
@@ -325,10 +347,6 @@ namespace blackjack_game
         {
             if (gameStarted)
             {
-                //playerCards.Clear();
-                //dealerCards.Clear();
-                //usedCards.Clear();
-
                 int randomPick = DrawRandomCard();
                 Card card = cardDeck[randomPick];
 

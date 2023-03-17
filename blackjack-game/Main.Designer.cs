@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.columnHeader1 = new System.Windows.Forms.ColumnHeader();
             this.navbar = new System.Windows.Forms.ToolStrip();
             this.dd_menu = new System.Windows.Forms.ToolStripDropDownButton();
             this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,9 +54,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.historyList = new System.Windows.Forms.ListView();
             this.lbl_status = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.historyTree = new System.Windows.Forms.TreeView();
             this.navbar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
@@ -67,11 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "History";
-            this.columnHeader1.Width = 250;
             // 
             // navbar
             // 
@@ -101,7 +95,7 @@
             // btn_website
             // 
             this.btn_website.Name = "btn_website";
-            this.btn_website.Size = new System.Drawing.Size(180, 22);
+            this.btn_website.Size = new System.Drawing.Size(116, 22);
             this.btn_website.Text = "Website";
             this.btn_website.Click += new System.EventHandler(this.btn_website_Click);
             // 
@@ -111,7 +105,7 @@
             this.gameSpeedToolStripMenuItem,
             this.deleteSaveDataToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // gameSpeedToolStripMenuItem
@@ -122,7 +116,7 @@
             this.fastToolStripMenuItem,
             this.speedrunToolStripMenuItem});
             this.gameSpeedToolStripMenuItem.Name = "gameSpeedToolStripMenuItem";
-            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.gameSpeedToolStripMenuItem.Text = "Game speed";
             // 
             // slowToolStripMenuItem
@@ -157,7 +151,7 @@
             // 
             this.deleteSaveDataToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deleteSaveDataToolStripMenuItem.Name = "deleteSaveDataToolStripMenuItem";
-            this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.deleteSaveDataToolStripMenuItem.Text = "Delete save data";
             this.deleteSaveDataToolStripMenuItem.Click += new System.EventHandler(this.deleteSaveDataToolStripMenuItem_Click);
             // 
@@ -226,22 +220,23 @@
             // lbl_totalBet
             // 
             this.lbl_totalBet.AutoSize = true;
+            this.lbl_totalBet.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_totalBet.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lbl_totalBet.Location = new System.Drawing.Point(321, 3);
             this.lbl_totalBet.Name = "lbl_totalBet";
-            this.lbl_totalBet.Size = new System.Drawing.Size(55, 15);
+            this.lbl_totalBet.Size = new System.Drawing.Size(65, 17);
             this.lbl_totalBet.TabIndex = 6;
             this.lbl_totalBet.Text = "Total bet:";
             // 
             // lbl_betAmount
             // 
             this.lbl_betAmount.AutoSize = true;
-            this.lbl_betAmount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_betAmount.Font = new System.Drawing.Font("Work Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_betAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_betAmount.Location = new System.Drawing.Point(321, 21);
+            this.lbl_betAmount.Location = new System.Drawing.Point(321, 18);
             this.lbl_betAmount.Name = "lbl_betAmount";
             this.lbl_betAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_betAmount.Size = new System.Drawing.Size(194, 32);
+            this.lbl_betAmount.Size = new System.Drawing.Size(202, 35);
             this.lbl_betAmount.TabIndex = 7;
             this.lbl_betAmount.Text = "${BETAMOUNT}";
             this.lbl_betAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -281,16 +276,16 @@
             this.panel1.Controls.Add(this.btn_decreaseBet);
             this.panel1.Location = new System.Drawing.Point(12, 492);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(602, 57);
+            this.panel1.Size = new System.Drawing.Size(590, 57);
             this.panel1.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(12, 359);
+            this.panel2.Location = new System.Drawing.Point(12, 372);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(602, 127);
+            this.panel2.Size = new System.Drawing.Size(590, 114);
             this.panel2.TabIndex = 9;
             // 
             // pictureBox1
@@ -298,29 +293,10 @@
             this.pictureBox1.Image = global::blackjack_game.Properties.Resources.Gregor;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(121, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(108, 108);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // historyList
-            // 
-            this.historyList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.historyList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.historyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1});
-            this.historyList.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.historyList.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.historyList.ForeColor = System.Drawing.SystemColors.Window;
-            this.historyList.FullRowSelect = true;
-            this.historyList.Location = new System.Drawing.Point(620, 328);
-            this.historyList.Name = "historyList";
-            this.historyList.Scrollable = false;
-            this.historyList.Size = new System.Drawing.Size(252, 221);
-            this.historyList.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.historyList.TabIndex = 1;
-            this.historyList.UseCompatibleStateImageBehavior = false;
-            this.historyList.View = System.Windows.Forms.View.Details;
             // 
             // lbl_status
             // 
@@ -337,10 +313,24 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
             this.panel3.Controls.Add(this.lbl_status);
-            this.panel3.Location = new System.Drawing.Point(12, 328);
+            this.panel3.Location = new System.Drawing.Point(12, 341);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(602, 25);
+            this.panel3.Size = new System.Drawing.Size(590, 25);
             this.panel3.TabIndex = 10;
+            // 
+            // historyTree
+            // 
+            this.historyTree.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.historyTree.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.historyTree.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.historyTree.ForeColor = System.Drawing.SystemColors.Window;
+            this.historyTree.Location = new System.Drawing.Point(608, 341);
+            this.historyTree.Name = "historyTree";
+            this.historyTree.Scrollable = false;
+            this.historyTree.ShowPlusMinus = false;
+            this.historyTree.ShowRootLines = false;
+            this.historyTree.Size = new System.Drawing.Size(264, 208);
+            this.historyTree.TabIndex = 12;
             // 
             // Main
             // 
@@ -348,7 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.historyList);
+            this.Controls.Add(this.historyTree);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -400,13 +390,12 @@
         private PictureBox pictureBox1;
         private Label lbl_status;
         private Panel panel3;
-        private ListView historyList;
         private ColumnHeader Card;
-        private ColumnHeader columnHeader1;
         private ToolStripMenuItem gameSpeedToolStripMenuItem;
         private ToolStripMenuItem slowToolStripMenuItem;
         private ToolStripMenuItem normalToolStripMenuItem;
         private ToolStripMenuItem fastToolStripMenuItem;
         private ToolStripMenuItem speedrunToolStripMenuItem;
+        private TreeView historyTree;
     }
 }
