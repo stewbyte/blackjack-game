@@ -469,5 +469,10 @@ namespace blackjack_game
         {
             gamesSpeed = 50;
         }
+
+        private void btn_website_Click(object sender, EventArgs e)
+        {
+            //site
+        }
     }
 }

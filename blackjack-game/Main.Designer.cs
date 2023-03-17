@@ -33,7 +33,6 @@
             this.navbar = new System.Windows.Forms.ToolStrip();
             this.dd_menu = new System.Windows.Forms.ToolStripDropDownButton();
             this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
-            this.forfeitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +91,6 @@
             this.dd_menu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.dd_menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_website,
-            this.forfeitToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.dd_menu.Image = ((System.Drawing.Image)(resources.GetObject("dd_menu.Image")));
             this.dd_menu.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -105,13 +103,7 @@
             this.btn_website.Name = "btn_website";
             this.btn_website.Size = new System.Drawing.Size(180, 22);
             this.btn_website.Text = "Website";
-            // 
-            // forfeitToolStripMenuItem
-            // 
-            this.forfeitToolStripMenuItem.Enabled = false;
-            this.forfeitToolStripMenuItem.Name = "forfeitToolStripMenuItem";
-            this.forfeitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.forfeitToolStripMenuItem.Text = "Forfeit";
+            this.btn_website.Click += new System.EventHandler(this.btn_website_Click);
             // 
             // settingsToolStripMenuItem
             // 
@@ -136,28 +128,28 @@
             // slowToolStripMenuItem
             // 
             this.slowToolStripMenuItem.Name = "slowToolStripMenuItem";
-            this.slowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.slowToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.slowToolStripMenuItem.Text = "Slow";
             this.slowToolStripMenuItem.Click += new System.EventHandler(this.slowToolStripMenuItem_Click);
             // 
             // normalToolStripMenuItem
             // 
             this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.normalToolStripMenuItem.Text = "Normal";
             this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
             // 
             // fastToolStripMenuItem
             // 
             this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
-            this.fastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fastToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.fastToolStripMenuItem.Text = "Fast";
             this.fastToolStripMenuItem.Click += new System.EventHandler(this.fastToolStripMenuItem_Click);
             // 
             // speedrunToolStripMenuItem
             // 
             this.speedrunToolStripMenuItem.Name = "speedrunToolStripMenuItem";
-            this.speedrunToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speedrunToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.speedrunToolStripMenuItem.Text = "Speedrun";
             this.speedrunToolStripMenuItem.Click += new System.EventHandler(this.speedrunToolStripMenuItem_Click);
             // 
@@ -392,7 +384,6 @@
         private ToolStripLabel lbl_balance;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel lbl_wins;
-        private ToolStripMenuItem forfeitToolStripMenuItem;
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem deleteSaveDataToolStripMenuItem;
         private Button btn_hit;
