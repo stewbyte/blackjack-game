@@ -91,12 +91,21 @@ namespace blackjack_game
         int ModifyBalance(int amount)
         {
             balance += amount;
+            lbl_balance.Text = $"Balance: ${balance}";
             return balance;
         }
 
         void UpdateBetLabel()
         {
-            lbl_betAmount.Text = $"${betAmount}";
+
+            if (betAmount > 0)
+            {
+                lbl_betAmount.Text = $"${betAmount}";
+            }
+            else
+            {
+                lbl_betAmount.Text = $"NO BET";
+            }
         }
 
         void LogToHistory(string message)
@@ -119,6 +128,12 @@ namespace blackjack_game
             btn_stand.Enabled = arg;
         }
 
+        void EnableBetButtons(bool arg)
+        {
+            btn_increaseBet.Enabled = arg;
+            btn_decreaseBet.Enabled = arg;
+        }
+
         void ResetGame()
         {
             gameStarted = false;
@@ -128,6 +143,8 @@ namespace blackjack_game
             playerCards.Clear();
             dealerCards.Clear();
             EnableButtons(true);
+            EnableBetButtons(true);
+            btn_stand.Enabled = false;
 
             foreach (PictureBox pb in playerPictureBox)
             {
@@ -146,7 +163,11 @@ namespace blackjack_game
             DisplayCardBack(pb_player);
             DisplayCardBack(pb_player1);
 
-            btn_hit.Text = "Start";
+            if (betAmount > balance)
+            {
+                betAmount = balance;
+                UpdateBetLabel();
+            }
         }
 
         void SumCards(List<Card> cards, ref int sum)
@@ -193,19 +214,23 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"won: {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"won: {playerCardSum} / {dealerCardSum} | +${betAmount}");
+            wins++;
+            lbl_wins.Text = $"Wins: {wins}";
+            ModifyBalance(+(betAmount * 2));
         }
 
         void LoseGame()
         {
             lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"lost: {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"lost: {playerCardSum} / {dealerCardSum} | -${betAmount}");
         }
 
         void TieGame()
         {
             lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             LogToHistory($"tie: {playerCardSum} / {dealerCardSum}");
+            ModifyBalance(+(betAmount));
         }
 
         public Main()
@@ -234,7 +259,7 @@ namespace blackjack_game
             {
                 betAmount += 5;
             }
-            betAmount = Math.Clamp(betAmount, 5, balance);
+            betAmount = Math.Clamp(betAmount, 0, balance);
             UpdateBetLabel();
         }
 
@@ -254,7 +279,7 @@ namespace blackjack_game
             {
                 betAmount -= 5;
             }
-            betAmount = Math.Clamp(betAmount, 5, balance);
+            betAmount = Math.Clamp(betAmount, 0, balance);
             UpdateBetLabel();
         }
 
@@ -287,6 +312,10 @@ namespace blackjack_game
                 gameStarted = true;
                 btn_stand.Enabled = true;
                 btn_hit.Text = "Hit";
+
+                ModifyBalance(-betAmount);
+
+                EnableBetButtons(false);
 
                 int holeCard1 = DrawRandomCard();
                 Card card1 = cardDeck[holeCard1];
@@ -341,7 +370,7 @@ namespace blackjack_game
                 dealerPictureBox.Add(pb);
                 dealerCards.Add(card);
                 SumCards(dealerCards, ref dealerCardSum);
-                await Task.Delay(500);
+                await Task.Delay(250);
             }
 
             SumCards(playerCards, ref playerCardSum);

@@ -36,6 +36,7 @@
             this.forfeitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeBackgroundColourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gameSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSaveDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_balance = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -68,7 +69,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "History";
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Width = 250;
             // 
             // navbar
             // 
@@ -113,6 +114,7 @@
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.changeBackgroundColourToolStripMenuItem,
+            this.gameSpeedToolStripMenuItem,
             this.deleteSaveDataToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
@@ -123,6 +125,12 @@
             this.changeBackgroundColourToolStripMenuItem.Name = "changeBackgroundColourToolStripMenuItem";
             this.changeBackgroundColourToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.changeBackgroundColourToolStripMenuItem.Text = "Change background colour";
+            // 
+            // gameSpeedToolStripMenuItem
+            // 
+            this.gameSpeedToolStripMenuItem.Name = "gameSpeedToolStripMenuItem";
+            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.gameSpeedToolStripMenuItem.Text = "Game speed";
             // 
             // deleteSaveDataToolStripMenuItem
             // 
@@ -251,7 +259,7 @@
             this.panel1.Controls.Add(this.btn_decreaseBet);
             this.panel1.Location = new System.Drawing.Point(12, 492);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(654, 57);
+            this.panel1.Size = new System.Drawing.Size(602, 57);
             this.panel1.TabIndex = 8;
             // 
             // panel2
@@ -260,7 +268,7 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(12, 359);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(654, 127);
+            this.panel2.Size = new System.Drawing.Size(602, 127);
             this.panel2.TabIndex = 9;
             // 
             // pictureBox1
@@ -283,10 +291,10 @@
             this.historyList.Font = new System.Drawing.Font("Consolas", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.historyList.ForeColor = System.Drawing.SystemColors.Window;
             this.historyList.FullRowSelect = true;
-            this.historyList.Location = new System.Drawing.Point(672, 328);
+            this.historyList.Location = new System.Drawing.Point(620, 328);
             this.historyList.Name = "historyList";
             this.historyList.Scrollable = false;
-            this.historyList.Size = new System.Drawing.Size(200, 221);
+            this.historyList.Size = new System.Drawing.Size(252, 221);
             this.historyList.Sorting = System.Windows.Forms.SortOrder.Descending;
             this.historyList.TabIndex = 1;
             this.historyList.UseCompatibleStateImageBehavior = false;
@@ -309,7 +317,7 @@
             this.panel3.Controls.Add(this.lbl_status);
             this.panel3.Location = new System.Drawing.Point(12, 328);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(654, 25);
+            this.panel3.Size = new System.Drawing.Size(602, 25);
             this.panel3.TabIndex = 10;
             // 
             // Main
@@ -375,5 +383,6 @@
         private ListView historyList;
         private ColumnHeader Card;
         private ColumnHeader columnHeader1;
+        private ToolStripMenuItem gameSpeedToolStripMenuItem;
     }
 }
