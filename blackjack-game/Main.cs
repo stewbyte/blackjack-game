@@ -157,6 +157,21 @@ namespace blackjack_game
                 sum += cards[i].Value;
             }
 
+            if (sum > 21)
+            {
+                foreach (Card c in cards)
+                {
+                    if (c.Value == 11)
+                    {
+                        sum -= 10;
+                        if (sum <= 21)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
             lbl_status.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
         }
 
