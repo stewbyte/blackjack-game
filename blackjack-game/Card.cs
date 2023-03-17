@@ -1,5 +1,8 @@
-﻿namespace blackjack_game
+﻿using System.Diagnostics;
+
+namespace blackjack_game
 {
+    [DebuggerDisplay("{Name} {Value}")]
     internal class Card
     {
         public string Name { get; set; }

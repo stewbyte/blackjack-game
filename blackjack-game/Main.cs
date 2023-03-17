@@ -5,7 +5,7 @@ namespace blackjack_game
         int balance = 100;
         int betAmount = 5;
         int wins;
-        int gamesPlayed;
+        int firstTime;
 
         int playerCardSum;
         int dealerCardSum;
@@ -113,6 +113,12 @@ namespace blackjack_game
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
+        void EnableButtons(bool arg)
+        {
+            btn_hit.Enabled = arg;
+            btn_stand.Enabled = arg;
+        }
+
         void ResetGame()
         {
             gameStarted = false;
@@ -121,6 +127,7 @@ namespace blackjack_game
             usedCards.Clear();
             playerCards.Clear();
             dealerCards.Clear();
+            EnableButtons(true);
 
             foreach (PictureBox pb in playerPictureBox)
             {
@@ -144,6 +151,7 @@ namespace blackjack_game
 
         void SumCards(List<Card> cards, ref int sum)
         {
+            sum = 0;
             for (int i = 0; i < cards.Count; i++)
             {
                 sum += cards[i].Value;
@@ -170,19 +178,19 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"won {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"won: {playerCardSum} / {dealerCardSum}");
         }
 
         void LoseGame()
         {
             lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"tied {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"lost: {playerCardSum} / {dealerCardSum}");
         }
 
         void TieGame()
         {
             lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            LogToHistory($"lost {playerCardSum} / {dealerCardSum}");
+            LogToHistory($"tie: {playerCardSum} / {dealerCardSum}");
         }
 
         public Main()
@@ -239,9 +247,9 @@ namespace blackjack_game
         {
             if (gameStarted)
             {
-                playerCards.Clear();
-                dealerCards.Clear();
-                usedCards.Clear();
+                //playerCards.Clear();
+                //dealerCards.Clear();
+                //usedCards.Clear();
 
                 int randomPick = DrawRandomCard();
                 Card card = cardDeck[randomPick];
@@ -298,10 +306,11 @@ namespace blackjack_game
             }
         }
 
-        private void btn_stand_Click(object sender, EventArgs e)
+        private async void btn_stand_Click(object sender, EventArgs e)
         {
-            if (dealerCardSum <= 16)
+            while (dealerCardSum <= 16)
             {
+                EnableButtons(false);
                 int randomCard = DrawRandomCard();
                 Card card = cardDeck[randomCard];
 
@@ -316,24 +325,26 @@ namespace blackjack_game
 
                 dealerPictureBox.Add(pb);
                 dealerCards.Add(card);
+                SumCards(dealerCards, ref dealerCardSum);
+                await Task.Delay(500);
             }
 
             SumCards(playerCards, ref playerCardSum);
-            SumCards(dealerCards, ref dealerCardSum);
 
-            if (playerCardSum == 21 || dealerCardSum == 21)
-            {
-                TieGame();
-                ResetGame();
-            }
-            else if (dealerCardSum > 21 || playerCardSum > dealerCardSum)
+            await Task.Delay(1000);
+            if (dealerCardSum > 21 || playerCardSum > dealerCardSum)
             {
                 WinGame();
                 ResetGame();
             }
-            else
+            else if (dealerCardSum > playerCardSum)
             {
                 LoseGame();
+                ResetGame();
+            }
+            else
+            {
+                TieGame();
                 ResetGame();
             }
         }
