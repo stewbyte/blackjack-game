@@ -2,14 +2,16 @@ namespace blackjack_game
 {
     public partial class Main : Form
     {
-        int balance = 100;
-        int betAmount = 5;
+        int balance;
+        int betAmount = 0;
         int wins;
         int firstTime;
 
         int playerCardSum;
         int dealerCardSum;
         bool gameStarted;
+
+        int gamesSpeed = 250;
 
         Random random = new Random();
 
@@ -88,6 +90,29 @@ namespace blackjack_game
         List<PictureBox> dealerPictureBox = new List<PictureBox>();
         List<PictureBox> playerPictureBox = new List<PictureBox>();
 
+        void WriteGameData()
+        {
+            string filePath = Path.Combine(Application.UserAppDataPath, "game_data.txt");
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                writer.WriteLine(balance);
+                writer.WriteLine(wins);
+            }
+        }
+
+        void ReadGameData()
+        {
+            string filePath = Path.Combine(Application.UserAppDataPath, "game_data.txt");
+            if (File.Exists(filePath))
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    balance = int.Parse(reader.ReadLine());
+                    wins = int.Parse(reader.ReadLine());
+                }
+            }
+        }
+
         int ModifyBalance(int amount)
         {
             balance += amount;
@@ -100,10 +125,12 @@ namespace blackjack_game
 
             if (betAmount > 0)
             {
+                lbl_totalBet.Text = $"Max bet: ${balance}";
                 lbl_betAmount.Text = $"${betAmount}";
             }
             else
             {
+                lbl_totalBet.Text = $"Wins do not count!";
                 lbl_betAmount.Text = $"NO BET";
             }
         }
@@ -136,6 +163,7 @@ namespace blackjack_game
 
         void ResetGame()
         {
+            WriteGameData();
             gameStarted = false;
             playerCardSum = 0;
             dealerCardSum = 0;
@@ -215,9 +243,13 @@ namespace blackjack_game
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             LogToHistory($"won: {playerCardSum} / {dealerCardSum} | +${betAmount}");
-            wins++;
             lbl_wins.Text = $"Wins: {wins}";
             ModifyBalance(+(betAmount * 2));
+
+            if (betAmount >= 5)
+            {
+                wins++;
+            }
         }
 
         void LoseGame()
@@ -235,12 +267,18 @@ namespace blackjack_game
 
         public Main()
         {
+            ReadGameData();
             InitializeComponent();
             lbl_balance.Text = $"Balance: ${balance}";
             lbl_wins.Text = $"Wins: {wins}";
             lbl_status.Text = $"[Begin the game by pressing 'Start']";
             UpdateBetLabel();
             ResetGame();
+
+            if (wins == 0 && balance == 0)
+            {
+                balance = 100;
+            }
         }
 
         private void btn_increaseBet_Click(object sender, EventArgs e)
@@ -370,12 +408,12 @@ namespace blackjack_game
                 dealerPictureBox.Add(pb);
                 dealerCards.Add(card);
                 SumCards(dealerCards, ref dealerCardSum);
-                await Task.Delay(250);
+                await Task.Delay(gamesSpeed);
             }
 
             SumCards(playerCards, ref playerCardSum);
 
-            await Task.Delay(1000);
+            await Task.Delay(gamesSpeed * 4);
             if (dealerCardSum > 21 || playerCardSum > dealerCardSum)
             {
                 WinGame();
@@ -391,6 +429,45 @@ namespace blackjack_game
                 TieGame();
                 ResetGame();
             }
+        }
+
+        private void deleteSaveDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "This will delete ALL data, are you sure?";
+            string title = "Delete Save Data";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                wins = 0;
+                balance = 100;
+                WriteGameData();
+                this.Close();
+            }
+            else
+            {
+                // Do something  
+            }
+        }
+
+        private void slowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gamesSpeed = 500;
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gamesSpeed = 250;
+        }
+
+        private void fastToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gamesSpeed = 150;
+        }
+
+        private void speedrunToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gamesSpeed = 50;
         }
     }
 }

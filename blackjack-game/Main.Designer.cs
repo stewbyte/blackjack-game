@@ -35,8 +35,11 @@
             this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
             this.forfeitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeBackgroundColourToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gameSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speedrunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSaveDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_balance = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -100,44 +103,71 @@
             // btn_website
             // 
             this.btn_website.Name = "btn_website";
-            this.btn_website.Size = new System.Drawing.Size(116, 22);
+            this.btn_website.Size = new System.Drawing.Size(180, 22);
             this.btn_website.Text = "Website";
             // 
             // forfeitToolStripMenuItem
             // 
             this.forfeitToolStripMenuItem.Enabled = false;
             this.forfeitToolStripMenuItem.Name = "forfeitToolStripMenuItem";
-            this.forfeitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.forfeitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.forfeitToolStripMenuItem.Text = "Forfeit";
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeBackgroundColourToolStripMenuItem,
             this.gameSpeedToolStripMenuItem,
             this.deleteSaveDataToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // changeBackgroundColourToolStripMenuItem
-            // 
-            this.changeBackgroundColourToolStripMenuItem.Name = "changeBackgroundColourToolStripMenuItem";
-            this.changeBackgroundColourToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
-            this.changeBackgroundColourToolStripMenuItem.Text = "Change background colour";
             // 
             // gameSpeedToolStripMenuItem
             // 
+            this.gameSpeedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.slowToolStripMenuItem,
+            this.normalToolStripMenuItem,
+            this.fastToolStripMenuItem,
+            this.speedrunToolStripMenuItem});
             this.gameSpeedToolStripMenuItem.Name = "gameSpeedToolStripMenuItem";
-            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gameSpeedToolStripMenuItem.Text = "Game speed";
+            // 
+            // slowToolStripMenuItem
+            // 
+            this.slowToolStripMenuItem.Name = "slowToolStripMenuItem";
+            this.slowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.slowToolStripMenuItem.Text = "Slow";
+            this.slowToolStripMenuItem.Click += new System.EventHandler(this.slowToolStripMenuItem_Click);
+            // 
+            // normalToolStripMenuItem
+            // 
+            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.normalToolStripMenuItem.Text = "Normal";
+            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
+            // 
+            // fastToolStripMenuItem
+            // 
+            this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
+            this.fastToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fastToolStripMenuItem.Text = "Fast";
+            this.fastToolStripMenuItem.Click += new System.EventHandler(this.fastToolStripMenuItem_Click);
+            // 
+            // speedrunToolStripMenuItem
+            // 
+            this.speedrunToolStripMenuItem.Name = "speedrunToolStripMenuItem";
+            this.speedrunToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.speedrunToolStripMenuItem.Text = "Speedrun";
+            this.speedrunToolStripMenuItem.Click += new System.EventHandler(this.speedrunToolStripMenuItem_Click);
             // 
             // deleteSaveDataToolStripMenuItem
             // 
             this.deleteSaveDataToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.deleteSaveDataToolStripMenuItem.Name = "deleteSaveDataToolStripMenuItem";
-            this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
+            this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.deleteSaveDataToolStripMenuItem.Text = "Delete save data";
+            this.deleteSaveDataToolStripMenuItem.Click += new System.EventHandler(this.deleteSaveDataToolStripMenuItem_Click);
             // 
             // lbl_balance
             // 
@@ -371,7 +401,6 @@
         private Button btn_decreaseBet;
         private Label lbl_totalBet;
         private Label lbl_betAmount;
-        private ToolStripMenuItem changeBackgroundColourToolStripMenuItem;
         private PictureBox pb_banker;
         private PictureBox pb_player;
         private PictureBox pb_player1;
@@ -384,5 +413,9 @@
         private ColumnHeader Card;
         private ColumnHeader columnHeader1;
         private ToolStripMenuItem gameSpeedToolStripMenuItem;
+        private ToolStripMenuItem slowToolStripMenuItem;
+        private ToolStripMenuItem normalToolStripMenuItem;
+        private ToolStripMenuItem fastToolStripMenuItem;
+        private ToolStripMenuItem speedrunToolStripMenuItem;
     }
 }
