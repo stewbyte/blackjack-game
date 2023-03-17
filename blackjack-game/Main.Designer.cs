@@ -174,30 +174,39 @@
             // 
             // btn_hit
             // 
-            this.btn_hit.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_hit.FlatAppearance.BorderSize = 0;
+            this.btn_hit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hit.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_hit.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_hit.Location = new System.Drawing.Point(3, 3);
             this.btn_hit.Name = "btn_hit";
             this.btn_hit.Size = new System.Drawing.Size(125, 50);
             this.btn_hit.TabIndex = 2;
             this.btn_hit.Text = "Hit";
-            this.btn_hit.UseVisualStyleBackColor = true;
+            this.btn_hit.UseVisualStyleBackColor = false;
             this.btn_hit.Click += new System.EventHandler(this.btn_hit_Click);
             // 
             // btn_stand
             // 
             this.btn_stand.Enabled = false;
-            this.btn_stand.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_stand.FlatAppearance.BorderSize = 0;
+            this.btn_stand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_stand.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_stand.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_stand.Location = new System.Drawing.Point(134, 3);
             this.btn_stand.Name = "btn_stand";
             this.btn_stand.Size = new System.Drawing.Size(125, 50);
             this.btn_stand.TabIndex = 3;
             this.btn_stand.Text = "Stand";
-            this.btn_stand.UseVisualStyleBackColor = true;
+            this.btn_stand.UseVisualStyleBackColor = false;
             this.btn_stand.Click += new System.EventHandler(this.btn_stand_Click);
             // 
             // btn_increaseBet
             // 
-            this.btn_increaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_increaseBet.FlatAppearance.BorderSize = 0;
+            this.btn_increaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_increaseBet.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_increaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_increaseBet.Location = new System.Drawing.Point(265, 3);
             this.btn_increaseBet.Name = "btn_increaseBet";
             this.btn_increaseBet.Size = new System.Drawing.Size(50, 25);
@@ -208,7 +217,10 @@
             // 
             // btn_decreaseBet
             // 
-            this.btn_decreaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_decreaseBet.FlatAppearance.BorderSize = 0;
+            this.btn_decreaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_decreaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_decreaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_decreaseBet.Location = new System.Drawing.Point(265, 28);
             this.btn_decreaseBet.Name = "btn_decreaseBet";
             this.btn_decreaseBet.Size = new System.Drawing.Size(50, 25);

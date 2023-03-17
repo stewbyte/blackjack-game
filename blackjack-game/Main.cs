@@ -252,7 +252,6 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            lbl_wins.Text = $"Wins: {wins}";
             ModifyBalance(+(betAmount * 2));
 
             if (betAmount >= 5)
@@ -264,6 +263,8 @@ namespace blackjack_game
             {
                 LogToHistory($"Won");
             }
+
+            lbl_wins.Text = $"Wins: {wins}";
         }
 
         void LoseGame()
