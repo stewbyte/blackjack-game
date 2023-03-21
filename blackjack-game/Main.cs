@@ -12,7 +12,7 @@ namespace blackjack_game
         int dealerCardSum;
         bool gameStarted;
 
-        int gamesSpeed = 500;
+        int gameSpeed = 500;
 
         Random random = new Random();
 
@@ -429,12 +429,12 @@ namespace blackjack_game
                 dealerPictureBox.Add(pb);
                 dealerCards.Add(card);
                 SumCards(dealerCards, ref dealerCardSum);
-                await Task.Delay(gamesSpeed);
+                await Task.Delay(gameSpeed);
             }
 
             SumCards(playerCards, ref playerCardSum);
 
-            await Task.Delay(gamesSpeed * 4);
+            await Task.Delay(gameSpeed * 4);
             if (dealerCardSum > 21 || playerCardSum > dealerCardSum)
             {
                 WinGame();
@@ -473,22 +473,22 @@ namespace blackjack_game
 
         private void slowToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gamesSpeed = 500;
+            gameSpeed = 500;
         }
 
         private void normalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gamesSpeed = 250;
+            gameSpeed = 250;
         }
 
         private void fastToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gamesSpeed = 150;
+            gameSpeed = 150;
         }
 
         private void speedrunToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            gamesSpeed = 50;
+            gameSpeed = 50;
         }
 
         private void btn_website_Click(object sender, EventArgs e)
