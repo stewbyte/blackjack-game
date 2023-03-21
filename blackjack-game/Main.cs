@@ -300,7 +300,7 @@ namespace blackjack_game
             InitializeComponent();
             lbl_balance.Text = $"Balance: ${balance}";
             lbl_xp.Text = $"XP: {xp}";
-            lbl_status.Text = $"[Begin the game by pressing 'Start']";
+            lbl_status.Text = $"[Begin the game by pressing 'Hit']";
             GregorTalk("greet");
             UpdateBetLabel();
             ResetGame();
