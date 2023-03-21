@@ -564,7 +564,6 @@ namespace blackjack_game
 
             if (arg == "greet")
             {
-                #region switch Greet
                 switch (r)
                 {
                     case 0:
@@ -631,12 +630,10 @@ namespace blackjack_game
                         gregorBox.Text = $"Privet. I am the champion of this game, and you're no match for me.";
                         break;
                 }
-                #endregion
             }
 
             else if (arg == "annoyed")
             {
-                #region Switch Annoyed
                 switch (r)
                 {
                     case 0:
@@ -703,12 +700,10 @@ namespace blackjack_game
                         gregorBox.Text = $"You think you are so good, huh?";
                         break;
                 }
-                #endregion
             }
 
             else if (arg == "happy")
             {
-                #region Switch Happy
                 switch (r)
                 {
                     case 0:
@@ -775,7 +770,6 @@ namespace blackjack_game
                         gregorBox.Text = $"Victory is mine once again! You need more than luck to beat me, my friend.";
                         break;
                 }
-                #endregion
             }
         }
     }
