@@ -290,6 +290,7 @@ namespace blackjack_game
         void TieGame()
         {
             lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            gregorBox.Text = "The odds!";
             LogToHistory($"Tied");
             ModifyBalance(+(betAmount));
         }
@@ -308,6 +309,18 @@ namespace blackjack_game
             if (xp == 0 && balance == 0)
             {
                 balance = 100;
+            }
+
+            float dpiX, dpiY;
+            using (Graphics graphics = this.CreateGraphics())
+            {
+                dpiX = graphics.DpiX;
+                dpiY = graphics.DpiY;
+            }
+
+            if (dpiX != 96 && dpiY != 96)
+            {
+                MessageBox.Show("Your screen scaling is not set to 100%, this will likely cause issues with the game. It is recommended to set your screen scaling to 100% in the Display settings");
             }
         }
 
