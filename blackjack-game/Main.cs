@@ -4,7 +4,7 @@ namespace blackjack_game
     {
         int balance;
         int betAmount = 0;
-        int wins;
+        int xp;
         uint gamesPlayed;
         int firstTime;
 
@@ -12,7 +12,7 @@ namespace blackjack_game
         int dealerCardSum;
         bool gameStarted;
 
-        int gamesSpeed = 250;
+        int gamesSpeed = 500;
 
         Random random = new Random();
 
@@ -96,7 +96,7 @@ namespace blackjack_game
             string filePath = Path.Combine(Application.UserAppDataPath, "game_data.txt");
             using StreamWriter writer = new StreamWriter(filePath);
             writer.WriteLine(balance);
-            writer.WriteLine(wins);
+            writer.WriteLine(xp);
         }
 
         void ReadGameData()
@@ -107,7 +107,7 @@ namespace blackjack_game
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     balance = int.Parse(reader.ReadLine());
-                    wins = int.Parse(reader.ReadLine());
+                    xp = int.Parse(reader.ReadLine());
                 }
             }
         }
@@ -122,15 +122,15 @@ namespace blackjack_game
         void UpdateBetLabel()
         {
 
-            if (betAmount > 0)
+            if (betAmount > 9)
             {
                 lbl_totalBet.Text = $"Max bet: ${balance}";
                 lbl_betAmount.Text = $"${betAmount}";
             }
             else
             {
-                lbl_totalBet.Text = $"Wins do not count!";
-                lbl_betAmount.Text = $"NO BET";
+                lbl_totalBet.Text = $"Max bet: ${balance} - No XP gained!";
+                lbl_betAmount.Text = $"${betAmount}";
             }
         }
 
@@ -146,10 +146,12 @@ namespace blackjack_game
 
             TreeNode childNode1 = new TreeNode($"You {playerCardSum} / {dealerCardSum} Dealer");
             TreeNode childNode2 = new TreeNode($"Bet amount: ${betAmount}");
-            TreeNode childNode3 = new TreeNode($"Time: {currentTime}");
+            TreeNode childNode3 = new TreeNode($"XP: {betAmount / 10}");
+            TreeNode childNode4 = new TreeNode($"Time: {currentTime}");
             lastAddedNode.Nodes.Add(childNode1);
             lastAddedNode.Nodes.Add(childNode2);
             lastAddedNode.Nodes.Add(childNode3);
+            lastAddedNode.Nodes.Add(childNode4);
         }
 
         void DisplayCardBack(PictureBox pictureBox)
@@ -256,7 +258,7 @@ namespace blackjack_game
 
             if (betAmount >= 5)
             {
-                wins++;
+                xp += betAmount / 10;
                 LogToHistory($"Won ${betAmount}");
             }
             else
@@ -264,7 +266,7 @@ namespace blackjack_game
                 LogToHistory($"Won");
             }
 
-            lbl_wins.Text = $"Wins: {wins}";
+            lbl_xp.Text = $"XP: {xp}";
         }
 
         void LoseGame()
@@ -293,12 +295,12 @@ namespace blackjack_game
             ReadGameData();
             InitializeComponent();
             lbl_balance.Text = $"Balance: ${balance}";
-            lbl_wins.Text = $"Wins: {wins}";
+            lbl_xp.Text = $"XP: {xp}";
             lbl_status.Text = $"[Begin the game by pressing 'Start']";
             UpdateBetLabel();
             ResetGame();
 
-            if (wins == 0 && balance == 0)
+            if (xp == 0 && balance == 0)
             {
                 balance = 100;
             }
@@ -354,7 +356,7 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(240 + playerPictureBox.Count * 115, 178);
+                pb.Location = new Point(240 + playerPictureBox.Count * 115, 191);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -418,7 +420,7 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(126 + dealerPictureBox.Count * 115, 28);
+                pb.Location = new Point(126 + dealerPictureBox.Count * 115, 41);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
@@ -458,7 +460,7 @@ namespace blackjack_game
             DialogResult result = MessageBox.Show(message, title, buttons);
             if (result == DialogResult.Yes)
             {
-                wins = 0;
+                xp = 0;
                 balance = 100;
                 WriteGameData();
                 this.Close();
@@ -492,6 +494,18 @@ namespace blackjack_game
         private void btn_website_Click(object sender, EventArgs e)
         {
             //site
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (pnl_settings.Visible)
+            {
+                pnl_settings.Hide();
+            }
+            else
+            {
+                pnl_settings.Show();
+            }
         }
     }
 }

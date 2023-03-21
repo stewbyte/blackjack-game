@@ -29,19 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.navbar = new System.Windows.Forms.ToolStrip();
-            this.dd_menu = new System.Windows.Forms.ToolStripDropDownButton();
-            this.btn_website = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gameSpeedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.slowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fastToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.speedrunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteSaveDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lbl_balance = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.lbl_wins = new System.Windows.Forms.ToolStripLabel();
             this.btn_hit = new System.Windows.Forms.Button();
             this.btn_stand = new System.Windows.Forms.Button();
             this.btn_increaseBet = new System.Windows.Forms.Button();
@@ -57,7 +44,11 @@
             this.lbl_status = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.historyTree = new System.Windows.Forms.TreeView();
-            this.navbar.SuspendLayout();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btn_menu = new System.Windows.Forms.Button();
+            this.lbl_xp = new System.Windows.Forms.Label();
+            this.lbl_balance = new System.Windows.Forms.Label();
+            this.pnl_settings = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
@@ -65,112 +56,8 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // navbar
-            // 
-            this.navbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dd_menu,
-            this.lbl_balance,
-            this.toolStripSeparator2,
-            this.lbl_wins});
-            this.navbar.Location = new System.Drawing.Point(0, 0);
-            this.navbar.Name = "navbar";
-            this.navbar.Size = new System.Drawing.Size(884, 25);
-            this.navbar.TabIndex = 1;
-            // 
-            // dd_menu
-            // 
-            this.dd_menu.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.dd_menu.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.dd_menu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_website,
-            this.settingsToolStripMenuItem});
-            this.dd_menu.Image = ((System.Drawing.Image)(resources.GetObject("dd_menu.Image")));
-            this.dd_menu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.dd_menu.Name = "dd_menu";
-            this.dd_menu.Size = new System.Drawing.Size(51, 22);
-            this.dd_menu.Text = "Menu";
-            // 
-            // btn_website
-            // 
-            this.btn_website.Name = "btn_website";
-            this.btn_website.Size = new System.Drawing.Size(116, 22);
-            this.btn_website.Text = "Website";
-            this.btn_website.Click += new System.EventHandler(this.btn_website_Click);
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gameSpeedToolStripMenuItem,
-            this.deleteSaveDataToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // gameSpeedToolStripMenuItem
-            // 
-            this.gameSpeedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.slowToolStripMenuItem,
-            this.normalToolStripMenuItem,
-            this.fastToolStripMenuItem,
-            this.speedrunToolStripMenuItem});
-            this.gameSpeedToolStripMenuItem.Name = "gameSpeedToolStripMenuItem";
-            this.gameSpeedToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.gameSpeedToolStripMenuItem.Text = "Game speed";
-            // 
-            // slowToolStripMenuItem
-            // 
-            this.slowToolStripMenuItem.Name = "slowToolStripMenuItem";
-            this.slowToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.slowToolStripMenuItem.Text = "Slow";
-            this.slowToolStripMenuItem.Click += new System.EventHandler(this.slowToolStripMenuItem_Click);
-            // 
-            // normalToolStripMenuItem
-            // 
-            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
-            this.normalToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.normalToolStripMenuItem.Text = "Normal";
-            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
-            // 
-            // fastToolStripMenuItem
-            // 
-            this.fastToolStripMenuItem.Name = "fastToolStripMenuItem";
-            this.fastToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.fastToolStripMenuItem.Text = "Fast";
-            this.fastToolStripMenuItem.Click += new System.EventHandler(this.fastToolStripMenuItem_Click);
-            // 
-            // speedrunToolStripMenuItem
-            // 
-            this.speedrunToolStripMenuItem.Name = "speedrunToolStripMenuItem";
-            this.speedrunToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.speedrunToolStripMenuItem.Text = "Speedrun";
-            this.speedrunToolStripMenuItem.Click += new System.EventHandler(this.speedrunToolStripMenuItem_Click);
-            // 
-            // deleteSaveDataToolStripMenuItem
-            // 
-            this.deleteSaveDataToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.deleteSaveDataToolStripMenuItem.Name = "deleteSaveDataToolStripMenuItem";
-            this.deleteSaveDataToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.deleteSaveDataToolStripMenuItem.Text = "Delete save data";
-            this.deleteSaveDataToolStripMenuItem.Click += new System.EventHandler(this.deleteSaveDataToolStripMenuItem_Click);
-            // 
-            // lbl_balance
-            // 
-            this.lbl_balance.Name = "lbl_balance";
-            this.lbl_balance.Size = new System.Drawing.Size(120, 22);
-            this.lbl_balance.Text = "Balance: ${BALANCE}";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // lbl_wins
-            // 
-            this.lbl_wins.Name = "lbl_wins";
-            this.lbl_wins.Size = new System.Drawing.Size(121, 22);
-            this.lbl_wins.Text = "Wins: {WINAMOUNT}";
             // 
             // btn_hit
             // 
@@ -255,7 +142,7 @@
             // 
             // pb_banker
             // 
-            this.pb_banker.Location = new System.Drawing.Point(12, 28);
+            this.pb_banker.Location = new System.Drawing.Point(12, 41);
             this.pb_banker.Name = "pb_banker";
             this.pb_banker.Size = new System.Drawing.Size(108, 144);
             this.pb_banker.TabIndex = 0;
@@ -263,7 +150,7 @@
             // 
             // pb_player
             // 
-            this.pb_player.Location = new System.Drawing.Point(12, 178);
+            this.pb_player.Location = new System.Drawing.Point(12, 191);
             this.pb_player.Name = "pb_player";
             this.pb_player.Size = new System.Drawing.Size(108, 144);
             this.pb_player.TabIndex = 1;
@@ -271,7 +158,7 @@
             // 
             // pb_player1
             // 
-            this.pb_player1.Location = new System.Drawing.Point(126, 178);
+            this.pb_player1.Location = new System.Drawing.Point(126, 191);
             this.pb_player1.Name = "pb_player1";
             this.pb_player1.Size = new System.Drawing.Size(108, 144);
             this.pb_player1.TabIndex = 2;
@@ -344,12 +231,69 @@
             this.historyTree.Size = new System.Drawing.Size(264, 208);
             this.historyTree.TabIndex = 12;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel4.Controls.Add(this.btn_menu);
+            this.panel4.Controls.Add(this.lbl_xp);
+            this.panel4.Controls.Add(this.lbl_balance);
+            this.panel4.Location = new System.Drawing.Point(12, 12);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(860, 23);
+            this.panel4.TabIndex = 13;
+            // 
+            // btn_menu
+            // 
+            this.btn_menu.FlatAppearance.BorderSize = 0;
+            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_menu.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_menu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_menu.Location = new System.Drawing.Point(785, 0);
+            this.btn_menu.Name = "btn_menu";
+            this.btn_menu.Size = new System.Drawing.Size(75, 23);
+            this.btn_menu.TabIndex = 14;
+            this.btn_menu.Text = "Menu";
+            this.btn_menu.UseVisualStyleBackColor = true;
+            this.btn_menu.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbl_xp
+            // 
+            this.lbl_xp.AutoSize = true;
+            this.lbl_xp.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_xp.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_xp.Location = new System.Drawing.Point(359, 3);
+            this.lbl_xp.Name = "lbl_xp";
+            this.lbl_xp.Size = new System.Drawing.Size(27, 17);
+            this.lbl_xp.TabIndex = 1;
+            this.lbl_xp.Text = "XP:";
+            // 
+            // lbl_balance
+            // 
+            this.lbl_balance.AutoSize = true;
+            this.lbl_balance.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_balance.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lbl_balance.Location = new System.Drawing.Point(3, 3);
+            this.lbl_balance.Name = "lbl_balance";
+            this.lbl_balance.Size = new System.Drawing.Size(92, 17);
+            this.lbl_balance.TabIndex = 0;
+            this.lbl_balance.Text = "Balance: $100";
+            // 
+            // pnl_settings
+            // 
+            this.pnl_settings.Location = new System.Drawing.Point(12, 41);
+            this.pnl_settings.Name = "pnl_settings";
+            this.pnl_settings.Size = new System.Drawing.Size(860, 508);
+            this.pnl_settings.TabIndex = 14;
+            this.pnl_settings.Visible = false;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.pnl_settings);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.historyTree);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -357,14 +301,12 @@
             this.Controls.Add(this.pb_player1);
             this.Controls.Add(this.pb_player);
             this.Controls.Add(this.pb_banker);
-            this.Controls.Add(this.navbar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Main";
             this.Text = "Blackjack";
-            this.navbar.ResumeLayout(false);
-            this.navbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
@@ -374,20 +316,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private ToolStrip navbar;
-        private ToolStripDropDownButton dd_menu;
-        private ToolStripMenuItem btn_website;
-        private ToolStripLabel lbl_balance;
-        private ToolStripSeparator toolStripSeparator2;
-        private ToolStripLabel lbl_wins;
-        private ToolStripMenuItem settingsToolStripMenuItem;
-        private ToolStripMenuItem deleteSaveDataToolStripMenuItem;
         private Button btn_hit;
         private Button btn_stand;
         private Button btn_increaseBet;
@@ -403,11 +338,11 @@
         private Label lbl_status;
         private Panel panel3;
         private ColumnHeader Card;
-        private ToolStripMenuItem gameSpeedToolStripMenuItem;
-        private ToolStripMenuItem slowToolStripMenuItem;
-        private ToolStripMenuItem normalToolStripMenuItem;
-        private ToolStripMenuItem fastToolStripMenuItem;
-        private ToolStripMenuItem speedrunToolStripMenuItem;
         private TreeView historyTree;
+        private Panel panel4;
+        private Label lbl_balance;
+        private Label lbl_xp;
+        private Button btn_menu;
+        private Panel pnl_settings;
     }
 }
