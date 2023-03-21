@@ -60,7 +60,7 @@
   <data name="textBox1.Text" xml:space="preserve">
     <value>The goal of the game is to have a hand value of 21 or as close to 21 as possible without going over. The one with the highest hand value that is less than or equal to 21 wins. However, going over 21 will make you lose the game. This is also applies to the dealer. You have a balance and can place bets for each game. The higher your bet, the more XP you gain if you win.
 
-You can increase your bet by clicking the arrow buttons next to the bet amount. Bets below $5 will not grant you any XP.
+You can increase your bet by clicking the arrow buttons next to the bet amount. Bets of $5 and below will not grant you any XP.
 
 Increase/Decrease bet by 10: CTRL + Click
 Increase/Decrease bet by 5: Click 
