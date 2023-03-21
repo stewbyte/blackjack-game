@@ -49,6 +49,9 @@
             this.lbl_xp = new System.Windows.Forms.Label();
             this.lbl_balance = new System.Windows.Forms.Label();
             this.pnl_settings = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_github = new System.Windows.Forms.Button();
+            this.btn_website = new System.Windows.Forms.Button();
             this.gb_resources = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.btn_resources = new System.Windows.Forms.Button();
@@ -71,6 +74,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.pnl_settings.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.gb_resources.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gb_howtoplay.SuspendLayout();
@@ -298,6 +302,7 @@
             // 
             // pnl_settings
             // 
+            this.pnl_settings.Controls.Add(this.groupBox2);
             this.pnl_settings.Controls.Add(this.gb_resources);
             this.pnl_settings.Controls.Add(this.groupBox1);
             this.pnl_settings.Controls.Add(this.gb_howtoplay);
@@ -308,6 +313,49 @@
             this.pnl_settings.TabIndex = 14;
             this.pnl_settings.Visible = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btn_github);
+            this.groupBox2.Controls.Add(this.btn_website);
+            this.groupBox2.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox2.Location = new System.Drawing.Point(3, 366);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(126, 82);
+            this.groupBox2.TabIndex = 17;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Other links";
+            // 
+            // btn_github
+            // 
+            this.btn_github.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btn_github.FlatAppearance.BorderSize = 0;
+            this.btn_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_github.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_github.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_github.Location = new System.Drawing.Point(7, 51);
+            this.btn_github.Name = "btn_github";
+            this.btn_github.Size = new System.Drawing.Size(113, 23);
+            this.btn_github.TabIndex = 16;
+            this.btn_github.Text = "My Github";
+            this.btn_github.UseVisualStyleBackColor = false;
+            this.btn_github.Click += new System.EventHandler(this.btn_github_Click);
+            // 
+            // btn_website
+            // 
+            this.btn_website.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btn_website.FlatAppearance.BorderSize = 0;
+            this.btn_website.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_website.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_website.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_website.Location = new System.Drawing.Point(7, 22);
+            this.btn_website.Name = "btn_website";
+            this.btn_website.Size = new System.Drawing.Size(113, 23);
+            this.btn_website.TabIndex = 15;
+            this.btn_website.Text = "My website";
+            this.btn_website.UseVisualStyleBackColor = false;
+            this.btn_website.Click += new System.EventHandler(this.btn_website_Click);
+            // 
             // gb_resources
             // 
             this.gb_resources.Controls.Add(this.textBox2);
@@ -316,7 +364,7 @@
             this.gb_resources.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.gb_resources.Location = new System.Drawing.Point(132, 205);
             this.gb_resources.Name = "gb_resources";
-            this.gb_resources.Size = new System.Drawing.Size(125, 155);
+            this.gb_resources.Size = new System.Drawing.Size(247, 155);
             this.gb_resources.TabIndex = 16;
             this.gb_resources.TabStop = false;
             this.gb_resources.Text = "Resources";
@@ -331,9 +379,9 @@
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(108, 95);
+            this.textBox2.Size = new System.Drawing.Size(235, 95);
             this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "If you want to replace the textures and/or sounds you can do so here.\r\n\r\n";
+            this.textBox2.Text = "If you want to replace the textures you can do so here.\r\n";
             // 
             // btn_resources
             // 
@@ -342,7 +390,7 @@
             this.btn_resources.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_resources.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_resources.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_resources.Location = new System.Drawing.Point(6, 126);
+            this.btn_resources.Location = new System.Drawing.Point(128, 126);
             this.btn_resources.Name = "btn_resources";
             this.btn_resources.Size = new System.Drawing.Size(113, 23);
             this.btn_resources.TabIndex = 15;
@@ -355,7 +403,7 @@
             this.groupBox1.Controls.Add(this.btn_reset);
             this.groupBox1.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox1.Location = new System.Drawing.Point(3, 454);
+            this.groupBox1.Location = new System.Drawing.Point(732, 454);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(125, 51);
             this.groupBox1.TabIndex = 6;
@@ -514,6 +562,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.pnl_settings.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.gb_resources.ResumeLayout(false);
             this.gb_resources.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -560,5 +609,8 @@
         private GroupBox gb_resources;
         private TextBox textBox2;
         private Button btn_resources;
+        private GroupBox groupBox2;
+        private Button btn_website;
+        private Button btn_github;
     }
 }

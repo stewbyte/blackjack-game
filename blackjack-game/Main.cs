@@ -522,5 +522,15 @@ namespace blackjack_game
                 MessageBox.Show("No resources folder found!");
             }
         }
+
+        private void btn_website_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://www.stw.dev") { UseShellExecute = true });
+        }
+
+        private void btn_github_Click(object sender, EventArgs e)
+        {
+            Process.Start(new ProcessStartInfo("https://github.com/Steffew") { UseShellExecute = true });
+        }
     }
 }
