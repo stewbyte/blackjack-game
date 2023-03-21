@@ -255,7 +255,7 @@ namespace blackjack_game
         void WinGame()
         {
             lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            ModifyBalance(+(betAmount * 2));
+            ModifyBalance(+(betAmount * 2) + 1);
 
             GregorTalk("annoyed");
 
