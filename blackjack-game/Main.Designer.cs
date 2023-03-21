@@ -65,6 +65,8 @@
             this.rb_speed500 = new System.Windows.Forms.RadioButton();
             this.rb_speed250 = new System.Windows.Forms.RadioButton();
             this.rb_speed100 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gregorBox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
@@ -203,6 +205,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.panel2.Controls.Add(this.gregorBox);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(12, 372);
             this.panel2.Name = "panel2";
@@ -307,7 +311,7 @@
             this.pnl_settings.Controls.Add(this.groupBox1);
             this.pnl_settings.Controls.Add(this.gb_howtoplay);
             this.pnl_settings.Controls.Add(this.gb_gamespeed);
-            this.pnl_settings.Location = new System.Drawing.Point(12, 41);
+            this.pnl_settings.Location = new System.Drawing.Point(698, 392);
             this.pnl_settings.Name = "pnl_settings";
             this.pnl_settings.Size = new System.Drawing.Size(860, 508);
             this.pnl_settings.TabIndex = 14;
@@ -529,6 +533,28 @@
             this.rb_speed100.UseVisualStyleBackColor = true;
             this.rb_speed100.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(114, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 17);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Gregor:";
+            // 
+            // gregorBox
+            // 
+            this.gregorBox.AutoSize = true;
+            this.gregorBox.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.gregorBox.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gregorBox.Location = new System.Drawing.Point(114, 23);
+            this.gregorBox.Name = "gregorBox";
+            this.gregorBox.Size = new System.Drawing.Size(51, 17);
+            this.gregorBox.TabIndex = 2;
+            this.gregorBox.Text = "Gregor:";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -556,6 +582,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -612,5 +639,7 @@
         private GroupBox groupBox2;
         private Button btn_website;
         private Button btn_github;
+        private Label gregorBox;
+        private Label label1;
     }
 }
