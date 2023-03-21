@@ -507,5 +507,29 @@ namespace blackjack_game
                 pnl_settings.Show();
             }
         }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_speed100.Checked)
+            {
+                gameSpeed = 100;
+            }
+            else if (rb_speed250.Checked)
+            {
+                gameSpeed = 250;
+            }
+            else if (rb_speed500.Checked)
+            {
+                gameSpeed = 500;
+            }
+            else if (rb_speed1000.Checked)
+            {
+                gameSpeed = 1000;
+            }
+            else if (rb_speed2500.Checked)
+            {
+                gameSpeed = 2500;
+            }
+        }
     }
 }

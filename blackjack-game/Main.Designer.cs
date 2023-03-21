@@ -49,6 +49,12 @@
             this.lbl_xp = new System.Windows.Forms.Label();
             this.lbl_balance = new System.Windows.Forms.Label();
             this.pnl_settings = new System.Windows.Forms.Panel();
+            this.group_gamespeed = new System.Windows.Forms.GroupBox();
+            this.rb_speed2500 = new System.Windows.Forms.RadioButton();
+            this.rb_speed1000 = new System.Windows.Forms.RadioButton();
+            this.rb_speed500 = new System.Windows.Forms.RadioButton();
+            this.rb_speed250 = new System.Windows.Forms.RadioButton();
+            this.rb_speed100 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
@@ -57,6 +63,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.pnl_settings.SuspendLayout();
+            this.group_gamespeed.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_hit
@@ -280,11 +288,96 @@
             // 
             // pnl_settings
             // 
+            this.pnl_settings.Controls.Add(this.group_gamespeed);
             this.pnl_settings.Location = new System.Drawing.Point(12, 41);
             this.pnl_settings.Name = "pnl_settings";
             this.pnl_settings.Size = new System.Drawing.Size(860, 508);
             this.pnl_settings.TabIndex = 14;
             this.pnl_settings.Visible = false;
+            // 
+            // group_gamespeed
+            // 
+            this.group_gamespeed.Controls.Add(this.rb_speed2500);
+            this.group_gamespeed.Controls.Add(this.rb_speed1000);
+            this.group_gamespeed.Controls.Add(this.rb_speed500);
+            this.group_gamespeed.Controls.Add(this.rb_speed250);
+            this.group_gamespeed.Controls.Add(this.rb_speed100);
+            this.group_gamespeed.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.group_gamespeed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.group_gamespeed.Location = new System.Drawing.Point(3, 3);
+            this.group_gamespeed.Name = "group_gamespeed";
+            this.group_gamespeed.Size = new System.Drawing.Size(125, 155);
+            this.group_gamespeed.TabIndex = 0;
+            this.group_gamespeed.TabStop = false;
+            this.group_gamespeed.Text = "Game speed";
+            // 
+            // rb_speed2500
+            // 
+            this.rb_speed2500.AutoSize = true;
+            this.rb_speed2500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rb_speed2500.Location = new System.Drawing.Point(6, 130);
+            this.rb_speed2500.Name = "rb_speed2500";
+            this.rb_speed2500.Size = new System.Drawing.Size(117, 21);
+            this.rb_speed2500.TabIndex = 4;
+            this.rb_speed2500.TabStop = true;
+            this.rb_speed2500.Text = "0.2x (Very slow)";
+            this.rb_speed2500.UseVisualStyleBackColor = true;
+            this.rb_speed2500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // rb_speed1000
+            // 
+            this.rb_speed1000.AutoSize = true;
+            this.rb_speed1000.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rb_speed1000.Location = new System.Drawing.Point(6, 103);
+            this.rb_speed1000.Name = "rb_speed1000";
+            this.rb_speed1000.Size = new System.Drawing.Size(90, 21);
+            this.rb_speed1000.TabIndex = 3;
+            this.rb_speed1000.TabStop = true;
+            this.rb_speed1000.Text = "0.5x (Slow)";
+            this.rb_speed1000.UseVisualStyleBackColor = true;
+            this.rb_speed1000.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
+            // rb_speed500
+            // 
+            this.rb_speed500.AutoSize = true;
+            this.rb_speed500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rb_speed500.Location = new System.Drawing.Point(6, 76);
+            this.rb_speed500.Name = "rb_speed500";
+            this.rb_speed500.Size = new System.Drawing.Size(102, 21);
+            this.rb_speed500.TabIndex = 2;
+            this.rb_speed500.TabStop = true;
+            this.rb_speed500.Text = "1.0x (Normal)";
+            this.rb_speed500.UseVisualStyleBackColor = true;
+            this.rb_speed500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+
+            // 
+            // rb_speed250
+            // 
+            this.rb_speed250.AutoSize = true;
+            this.rb_speed250.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rb_speed250.Location = new System.Drawing.Point(6, 49);
+            this.rb_speed250.Name = "rb_speed250";
+            this.rb_speed250.Size = new System.Drawing.Size(85, 21);
+            this.rb_speed250.TabIndex = 1;
+            this.rb_speed250.TabStop = true;
+            this.rb_speed250.Text = "2.0x (Fast)";
+            this.rb_speed250.UseVisualStyleBackColor = true;
+            this.rb_speed250.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+
+            // 
+            // rb_speed100
+            // 
+            this.rb_speed100.AutoSize = true;
+            this.rb_speed100.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rb_speed100.Location = new System.Drawing.Point(6, 22);
+            this.rb_speed100.Name = "rb_speed100";
+            this.rb_speed100.Size = new System.Drawing.Size(113, 21);
+            this.rb_speed100.TabIndex = 0;
+            this.rb_speed100.TabStop = true;
+            this.rb_speed100.Text = "5.0x (Very fast)";
+            this.rb_speed100.UseVisualStyleBackColor = true;
+            this.rb_speed100.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+
             // 
             // Main
             // 
@@ -318,6 +411,9 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.pnl_settings.ResumeLayout(false);
+            this.group_gamespeed.ResumeLayout(false);
+            this.group_gamespeed.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -344,5 +440,11 @@
         private Label lbl_xp;
         private Button btn_menu;
         private Panel pnl_settings;
+        private GroupBox group_gamespeed;
+        private RadioButton rb_speed100;
+        private RadioButton rb_speed500;
+        private RadioButton rb_speed250;
+        private RadioButton rb_speed2500;
+        private RadioButton rb_speed1000;
     }
 }
