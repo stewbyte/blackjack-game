@@ -50,7 +50,6 @@
     <None Remove="Resources\Images\AD.png" />
     <None Remove="Resources\Images\AH.png" />
     <None Remove="Resources\Images\AS.png" />
-    <None Remove="Resources\Images\BB.png" />
     <None Remove="Resources\Images\BR.png" />
     <None Remove="Resources\Images\JC.png" />
     <None Remove="Resources\Images\JD.png" />
@@ -185,9 +184,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\AS.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Resources\Images\BB.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\Images\BR.png">
