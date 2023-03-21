@@ -279,7 +279,7 @@
             this.lbl_xp.AutoSize = true;
             this.lbl_xp.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_xp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_xp.Location = new System.Drawing.Point(359, 3);
+            this.lbl_xp.Location = new System.Drawing.Point(219, 3);
             this.lbl_xp.Name = "lbl_xp";
             this.lbl_xp.Size = new System.Drawing.Size(27, 17);
             this.lbl_xp.TabIndex = 1;

@@ -8,7 +8,6 @@ namespace blackjack_game
         int betAmount = 0;
         int xp;
         uint gamesPlayed;
-        int firstTime;
 
         int playerCardSum;
         int dealerCardSum;
