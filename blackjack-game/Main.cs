@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace blackjack_game
 {
     public partial class Main : Form
@@ -452,50 +454,6 @@ namespace blackjack_game
             }
         }
 
-        private void deleteSaveDataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string message = "This will delete ALL data, are you sure?";
-            string title = "Delete Save Data";
-            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, title, buttons);
-            if (result == DialogResult.Yes)
-            {
-                xp = 0;
-                balance = 100;
-                WriteGameData();
-                this.Close();
-            }
-            else
-            {
-                // Do something  
-            }
-        }
-
-        private void slowToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameSpeed = 500;
-        }
-
-        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameSpeed = 250;
-        }
-
-        private void fastToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameSpeed = 150;
-        }
-
-        private void speedrunToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            gameSpeed = 50;
-        }
-
-        private void btn_website_Click(object sender, EventArgs e)
-        {
-            //site
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (pnl_settings.Visible)
@@ -529,6 +487,40 @@ namespace blackjack_game
             else if (rb_speed2500.Checked)
             {
                 gameSpeed = 2500;
+            }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            string message = "This will delete ALL data, are you sure?";
+            string title = "Delete Save Data";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                xp = 0;
+                balance = 100;
+                WriteGameData();
+                this.Close();
+            }
+            else
+            {
+                // Do something  
+            }
+        }
+
+        private void btn_resources_Click(object sender, EventArgs e)
+        {
+            string resourcesPath = Path.Combine(Application.StartupPath, "Resources");
+
+            if (Directory.Exists(resourcesPath))
+            {
+                // The Resources folder exists, so you can open it in File Explorer:
+                Process.Start("explorer.exe", resourcesPath);
+            }
+            else
+            {
+                MessageBox.Show("No resources folder found!");
             }
         }
     }

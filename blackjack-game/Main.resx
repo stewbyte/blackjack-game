@@ -57,6 +57,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>The goal of the game is to have a hand value of 21 or as close to 21 as possible without going over. The one  with the highest hand value that is less than or equal to 21 wins. However, going over 21 will make you lose the game. This is also applies to the dealer. You have a balance and can place bets for each game. The higher your bet, the more XP you gain if you win.
+
+You can increase your bet by clicking the arrow buttons next to the bet amount. Bets below $5 will not grant you any XP.
+
+Increase/Decrease bet by 10: CTRL + Click
+Increase/Decrease bet by 5: Click 
+Increase/Decrease bet by 1: Shift + Click</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
