@@ -95,7 +95,7 @@
             this.btnHit.TabIndex = 2;
             this.btnHit.Text = "Hit";
             this.btnHit.UseVisualStyleBackColor = false;
-            this.btnHit.Click += new System.EventHandler(this.btn_hit_Click);
+            this.btnHit.Click += new System.EventHandler(this.btnHit_Click);
             // 
             // btn_stand
             // 
@@ -110,7 +110,7 @@
             this.btnStand.TabIndex = 3;
             this.btnStand.Text = "Stand";
             this.btnStand.UseVisualStyleBackColor = false;
-            this.btnStand.Click += new System.EventHandler(this.btn_stand_Click);
+            this.btnStand.Click += new System.EventHandler(this.btnStand_Click);
             // 
             // btn_increaseBet
             // 
@@ -138,7 +138,7 @@
             this.btnDecreaseBet.TabIndex = 5;
             this.btnDecreaseBet.Text = "↓";
             this.btnDecreaseBet.UseVisualStyleBackColor = true;
-            this.btnDecreaseBet.Click += new System.EventHandler(this.btn_decreaseBet_Click);
+            this.btnDecreaseBet.Click += new System.EventHandler(this.btnDecreaseBet_Click);
             // 
             // lbl_totalBet
             // 
@@ -302,7 +302,7 @@
             this.btnMenu.TabIndex = 14;
             this.btnMenu.Text = "Menu";
             this.btnMenu.UseVisualStyleBackColor = true;
-            this.btnMenu.Click += new System.EventHandler(this.button1_Click);
+            this.btnMenu.Click += new System.EventHandler(this.panelToggle_Click);
             // 
             // lbl_xp
             // 
@@ -365,7 +365,7 @@
             this.btnGithub.TabIndex = 16;
             this.btnGithub.Text = "My Github";
             this.btnGithub.UseVisualStyleBackColor = false;
-            this.btnGithub.Click += new System.EventHandler(this.btn_github_Click);
+            this.btnGithub.Click += new System.EventHandler(this.btnGithub_Click);
             // 
             // btn_website
             // 
@@ -380,7 +380,7 @@
             this.btnWebsite.TabIndex = 15;
             this.btnWebsite.Text = "My website";
             this.btnWebsite.UseVisualStyleBackColor = false;
-            this.btnWebsite.Click += new System.EventHandler(this.btn_website_Click);
+            this.btnWebsite.Click += new System.EventHandler(this.btnWebsite_Click);
             // 
             // gb_resources
             // 
@@ -422,7 +422,7 @@
             this.btnResources.TabIndex = 15;
             this.btnResources.Text = "Open folder";
             this.btnResources.UseVisualStyleBackColor = false;
-            this.btnResources.Click += new System.EventHandler(this.btn_resources_Click);
+            this.btnResources.Click += new System.EventHandler(this.btnResources_Click);
             // 
             // groupBox1
             // 
@@ -449,7 +449,7 @@
             this.btnReset.TabIndex = 15;
             this.btnReset.Text = "Reset data";
             this.btnReset.UseVisualStyleBackColor = false;
-            this.btnReset.Click += new System.EventHandler(this.btn_reset_Click);
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // gb_howtoplay
             // 

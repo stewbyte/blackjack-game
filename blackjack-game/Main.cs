@@ -89,9 +89,8 @@ namespace blackjack_game
                 new Card() {Value = 11, Name = "Ace Hearts", Image = "Resources/Images/AH.png"}
         };
 
-        //Todo: meervoud
-        List<PictureBox> dealerPictureBox = new List<PictureBox>();
-        List<PictureBox> playerPictureBox = new List<PictureBox>();
+        List<PictureBox> dealerPictureBoxes = new List<PictureBox>();
+        List<PictureBox> playerPictureBoxes = new List<PictureBox>();
 
         void WriteGameData()
         {
@@ -164,7 +163,6 @@ namespace blackjack_game
 
         void EnableButtons(bool arg)
         {
-            //TodoL refactor
             btnHit.Enabled = arg;
             btnStand.Enabled = arg;
         }
@@ -189,17 +187,17 @@ namespace blackjack_game
             EnableBetButtons(true);
             btnStand.Enabled = false;
 
-            foreach (PictureBox pb in playerPictureBox)
+            foreach (PictureBox pb in playerPictureBoxes)
             {
                 this.Controls.Remove(pb);
             }
-            playerPictureBox = new List<PictureBox>();
+            playerPictureBoxes = new List<PictureBox>();
 
-            foreach (PictureBox pb in dealerPictureBox)
+            foreach (PictureBox pb in dealerPictureBoxes)
             {
                 this.Controls.Remove(pb);
             }
-            dealerPictureBox = new List<PictureBox>();
+            dealerPictureBoxes = new List<PictureBox>();
 
             DisplayCardBack(pbxBanker);
             DisplayCardBack(pbxPlayer);
@@ -345,7 +343,7 @@ namespace blackjack_game
             UpdateBetLabel();
         }
 
-        private void btn_decreaseBet_Click(object sender, EventArgs e)
+        private void btnDecreaseBet_Click(object sender, EventArgs e)
         {
             if (ModifierKeys.HasFlag(Keys.Shift))
             {
@@ -365,7 +363,7 @@ namespace blackjack_game
             UpdateBetLabel();
         }
 
-        private void btn_hit_Click(object sender, EventArgs e)
+        private void btnHit_Click(object sender, EventArgs e)
         {
             if (gameStarted)
             {
@@ -375,13 +373,13 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(240 + playerPictureBox.Count * 115, 191);
+                pb.Location = new Point(240 + playerPictureBoxes.Count * 115, 191);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 this.Controls.Add(pb);
 
-                playerPictureBox.Add(pb);
+                playerPictureBoxes.Add(pb);
 
                 playerCards.Add(card);
             }
@@ -428,7 +426,7 @@ namespace blackjack_game
             }
         }
 
-        private async void btn_stand_Click(object sender, EventArgs e)
+        private async void btnStand_Click(object sender, EventArgs e)
         {
             while (dealerCardSum <= 16)
             {
@@ -439,13 +437,13 @@ namespace blackjack_game
                 PictureBox pb = new PictureBox();
                 pb.Width = 108;
                 pb.Height = 144;
-                pb.Location = new Point(126 + dealerPictureBox.Count * 115, 41);
+                pb.Location = new Point(126 + dealerPictureBoxes.Count * 115, 41);
                 pb.ImageLocation = card.Image;
                 pb.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 this.Controls.Add(pb);
 
-                dealerPictureBox.Add(pb);
+                dealerPictureBoxes.Add(pb);
                 dealerCards.Add(card);
                 SumCards(dealerCards, ref dealerCardSum);
                 await Task.Delay(gameSpeed);
@@ -471,7 +469,7 @@ namespace blackjack_game
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void panelToggle_Click(object sender, EventArgs e)
         {
             if (pnlSettings.Visible)
             {
@@ -507,7 +505,7 @@ namespace blackjack_game
             }
         }
 
-        private void btn_reset_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
         {
             string message = "This will delete ALL data, are you sure?";
             string title = "Delete Save Data";
@@ -526,7 +524,7 @@ namespace blackjack_game
             }
         }
 
-        private void btn_resources_Click(object sender, EventArgs e)
+        private void btnResources_Click(object sender, EventArgs e)
         {
             string resourcesPath = Path.Combine(Application.StartupPath, "Resources");
 
@@ -541,12 +539,12 @@ namespace blackjack_game
             }
         }
 
-        private void btn_website_Click(object sender, EventArgs e)
+        private void btnWebsite_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://www.stw.dev") { UseShellExecute = true });
         }
 
-        private void btn_github_Click(object sender, EventArgs e)
+        private void btnGithub_Click(object sender, EventArgs e)
         {
             Process.Start(new ProcessStartInfo("https://github.com/Steffew") { UseShellExecute = true });
         }
