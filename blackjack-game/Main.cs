@@ -17,6 +17,75 @@ namespace blackjack_game
 
         Random random = new Random();
 
+        List<string> greetQuotes = new List<string>() {
+        "There you are, how is my little friend doing?",
+        $"Aha, {Environment.UserName}. I have heard about you.",
+        "Finally, you are here.",
+        "Is this my opponent? Should be a piece of Medovik.",
+        "Privet.",
+        "Well, well, well. A new challenger has arrived. Let's see what you're made of.",
+        "Greetings, young one. You've come to face the master of the game.",
+        "Aha, a brave one. You're not afraid to lose, are you?",
+        "Privet. I am the one and only champion of this game.",
+        "Welcome, comrade. Are you ready to test your luck against me?",
+        "So, you think you have what it takes to beat me? We shall see.",
+        "Greetings, my friend. Do you have the skills to defeat me?",
+        "Is this my new opponent? You don't look like much of a challenge.",
+        "Ah, a fresh face. I hope you're not too disappointed when you lose.",
+        "Blin, another one? Fine, let's play this game again.",
+        "You've come to challenge the master of the game? We'll see how that goes.",
+        $"Welcome to the game, {Environment.UserName}. I hope you're prepared to lose.",
+        "So, you think you can beat me? You have much to learn, my young friend.",
+        "Well, well, well. Another challenger. I hope you're not too disappointed when you lose.",
+        "Ah, it's you. I've been waiting for a new opponent to humiliate.",
+        };
+        List<string> winQuotes = new List<string>() {
+        "Blin! How?",
+        "Luck, pure luck.",
+        "You got me this time.",
+        "I can't believe it. You have horsehoe stuck in pocket or what?",
+        "Always winning. Maybe I let you win, huh?",
+        "Blin! Game is rigged anyway!",
+        "Argh! I don't understand how you won.",
+        "Nyet! What is wrong with me?",
+        "You must be cheating somehow. I'm watching you.",
+        "You might have won this time, but it won't happen again.",
+        "One day you'll get what's coming to you, mark my words.",
+        "I don't know how you keep doing it, but it won't last forever.",
+        "You're not as good as you think you are, trust me.",
+        "You got lucky this time, don't let it go to your head.",
+        "I'll get you next time, you can count on it.",
+        "Don't get too comfortable, I'm just getting started.",
+        "You might have won the battle, but the war is far from over.",
+        "You're not the only one who knows how to play this game.",
+        "This was gift from me, I felt like I won too much.",
+        "Durak! Stop with the cheats!",
+        "You think you are so good, huh?",
+        };
+        List<string> loseQuotes = new List<string>() {
+        "Ha! You're no match for me, young one!",
+        "I knew I could beat you, it was just a matter of time.",
+        "You're not as good as you think you are. I have more experience.",
+        "I win again! Maybe you need some more practice, eh?",
+        "You think you can beat me? Hah! I laugh at your foolishness!",
+        "I am still the champion! You have much to learn, my friend.",
+        "It was a good try, but not good enough. Maybe next time?",
+        "You're not the first to challenge me, and you won't be the last.",
+        "Ha! Victory is mine once again!",
+        "I am unbeatable! You might as well give up now.",
+        "You thought you could beat me? Think again, youngster.",
+        "You have much to learn, but I'll teach you.",
+        "I could play this game with my eyes closed and still win.",
+        "You're not the first one to fall victim to my skills, and you won't be the last.",
+        "You'll have to try harder than that to beat me, comrade.",
+        "You're not a worthy opponent, but I like winning from you.",
+        "I could win this game with one hand tied behind my back.",
+        "You're outmatched, my friend. It's time to concede.",
+        "I win again! You might as well give up now.",
+        "You thought you had a chance? Ha! You're no match for me.",
+        "Victory is mine once again! You need more than luck to beat me, my friend.",
+        };
+
         List<int> usedCards = new List<int>();
         List<Card> playerCards = new List<Card>()
         {
@@ -256,7 +325,7 @@ namespace blackjack_game
             lblStatus.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             ModifyBalance(+(betAmount * 2) + 1);
 
-            GregorTalk("annoyed");
+            GregorTalk(winQuotes);
 
             if (betAmount >= 5)
             {
@@ -274,7 +343,7 @@ namespace blackjack_game
         void LoseGame()
         {
             lblStatus.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
-            GregorTalk("happy");
+            GregorTalk(loseQuotes);
 
             if (betAmount >= 5)
             {
@@ -301,7 +370,7 @@ namespace blackjack_game
             lblBalance.Text = $"Balance: ${balance}";
             lblXp.Text = $"XP: {xp}";
             lblStatus.Text = $"[Begin the game by pressing 'Hit']";
-            GregorTalk("greet");
+            GregorTalk(greetQuotes);
             UpdateBetLabel();
             ResetGame();
 
@@ -518,10 +587,6 @@ namespace blackjack_game
                 WriteGameData();
                 this.Close();
             }
-            else
-            {
-                // Do something  
-            }
         }
 
         private void btnResources_Click(object sender, EventArgs e)
@@ -530,7 +595,6 @@ namespace blackjack_game
 
             if (Directory.Exists(resourcesPath))
             {
-                // The Resources folder exists, so you can open it in File Explorer:
                 Process.Start("explorer.exe", resourcesPath);
             }
             else
@@ -549,227 +613,21 @@ namespace blackjack_game
             Process.Start(new ProcessStartInfo("https://github.com/Steffew") { UseShellExecute = true });
         }
 
-        void GregorTalk(string arg)
+        void GregorTalk(List<string> list)
         {
+
+
             int prevRandom = -1;
 
             int r;
             do
             {
-                r = random.Next(0, 21);
+                r = random.Next(0, list.Count + 1);
             } while (r == prevRandom);
 
             prevRandom = r;
 
-            if (arg == "greet")
-            {
-                switch (r)
-                {
-                    case 0:
-                        gregorBox.Text = $"There you are, how is my little friend doing?";
-                        break;
-                    case 1:
-                        gregorBox.Text = $"Aha, {Environment.UserName}. I have heard about you.";
-                        break;
-                    case 2:
-                        gregorBox.Text = $"Finally, you are here.";
-                        break;
-                    case 3:
-                        gregorBox.Text = $"Is this my opponent? Should be a piece of Medovik.";
-                        break;
-                    case 4:
-                        gregorBox.Text = $"Privet.";
-                        break;
-                    case 5:
-                        gregorBox.Text = $"Well, well, well. A new challenger has arrived. Let's see what you're made of.";
-                        break;
-                    case 6:
-                        gregorBox.Text = $"Greetings, young one. You've come to face the master of the game.";
-                        break;
-                    case 7:
-                        gregorBox.Text = $"Aha, a brave one. You're not afraid to lose, are you?";
-                        break;
-                    case 8:
-                        gregorBox.Text = $"Privet. I am the one and only champion of this game.";
-                        break;
-                    case 9:
-                        gregorBox.Text = $"Welcome, comrade. Are you ready to test your luck against me?";
-                        break;
-                    case 10:
-                        gregorBox.Text = $"So, you think you have what it takes to beat me? We shall see.";
-                        break;
-                    case 11:
-                        gregorBox.Text = $"Greetings, my friend. Do you have the skills to defeat me?";
-                        break;
-                    case 12:
-                        gregorBox.Text = $"Is this my new opponent? You don't look like much of a challenge.";
-                        break;
-                    case 13:
-                        gregorBox.Text = $"Ah, a fresh face. I hope you're not too disappointed when you lose.";
-                        break;
-                    case 14:
-                        gregorBox.Text = $"Blin, another one? Fine, let's play this game again.";
-                        break;
-                    case 15:
-                        gregorBox.Text = $"You've come to challenge the master of the game? We'll see how that goes.";
-                        break;
-                    case 16:
-                        gregorBox.Text = $"Welcome to the game, {Environment.UserName}. I hope you're prepared to lose.";
-                        break;
-                    case 17:
-                        gregorBox.Text = $"So, you think you can beat me? You have much to learn, my young friend.";
-                        break;
-                    case 18:
-                        gregorBox.Text = $"Well, well, well. Another challenger. I hope you're not too disappointed when you lose.";
-                        break;
-                    case 19:
-                        gregorBox.Text = $"Ah, it's you. I've been waiting for a new opponent to humiliate.";
-                        break;
-                    case 20:
-                        gregorBox.Text = $"Privet. I am the champion of this game, and you're no match for me.";
-                        break;
-                }
-            }
-
-            else if (arg == "annoyed")
-            {
-                switch (r)
-                {
-                    case 0:
-                        gregorBox.Text = $"Blin! How?";
-                        break;
-                    case 1:
-                        gregorBox.Text = $"Luck, pure luck.";
-                        break;
-                    case 2:
-                        gregorBox.Text = $"You got me this time.";
-                        break;
-                    case 3:
-                        gregorBox.Text = $"I can't believe it. You have horsehoe stuck in pocket or what?";
-                        break;
-                    case 4:
-                        gregorBox.Text = $"Always winning. Maybe I let you win, huh?";
-                        break;
-                    case 5:
-                        gregorBox.Text = $"Blin! Game is rigged anyway!";
-                        break;
-                    case 6:
-                        gregorBox.Text = $"Argh! I don't understand how you won.";
-                        break;
-                    case 7:
-                        gregorBox.Text = $"Nyet! What is wrong with me?";
-                        break;
-                    case 8:
-                        gregorBox.Text = $"You must be cheating somehow. I'm watching you.";
-                        break;
-                    case 9:
-                        gregorBox.Text = $"You might have won this time, but it won't happen again.";
-                        break;
-                    case 10:
-                        gregorBox.Text = $"One day you'll get what's coming to you, mark my words.";
-                        break;
-                    case 11:
-                        gregorBox.Text = $"I don't know how you keep doing it, but it won't last forever.";
-                        break;
-                    case 12:
-                        gregorBox.Text = $"You're not as good as you think you are, trust me.";
-                        break;
-                    case 13:
-                        gregorBox.Text = $"You got lucky this time, don't let it go to your head.";
-                        break;
-                    case 14:
-                        gregorBox.Text = $"I'll get you next time, you can count on it.";
-                        break;
-                    case 15:
-                        gregorBox.Text = $"Don't get too comfortable, I'm just getting started.";
-                        break;
-                    case 16:
-                        gregorBox.Text = $"You might have won the battle, but the war is far from over.";
-                        break;
-                    case 17:
-                        gregorBox.Text = $"You're not the only one who knows how to play this game.";
-                        break;
-                    case 18:
-                        gregorBox.Text = $"This was gift from me, I felt like I won too much.";
-                        break;
-                    case 19:
-                        gregorBox.Text = $"Durak! Stop with the cheats!";
-                        break;
-                    case 20:
-                        gregorBox.Text = $"You think you are so good, huh?";
-                        break;
-                }
-            }
-
-            else if (arg == "happy")
-            {
-                switch (r)
-                {
-                    case 0:
-                        gregorBox.Text = $"Ha! You're no match for me, young one!";
-                        break;
-                    case 1:
-                        gregorBox.Text = $"I knew I could beat you, it was just a matter of time.";
-                        break;
-                    case 2:
-                        gregorBox.Text = $"You're not as good as you think you are. I have more experience.";
-                        break;
-                    case 3:
-                        gregorBox.Text = $"I win again! Maybe you need some more practice, eh?";
-                        break;
-                    case 4:
-                        gregorBox.Text = $"You think you can beat me? Hah! I laugh at your foolishness!";
-                        break;
-                    case 5:
-                        gregorBox.Text = $"I am still the champion! You have much to learn, my friend.";
-                        break;
-                    case 6:
-                        gregorBox.Text = $"It was a good try, but not good enough. Maybe next time?";
-                        break;
-                    case 7:
-                        gregorBox.Text = $"You're not the first to challenge me, and you won't be the last.";
-                        break;
-                    case 8:
-                        gregorBox.Text = $"Ha! Victory is mine once again!";
-                        break;
-                    case 9:
-                        gregorBox.Text = $"I am unbeatable! You might as well give up now.";
-                        break;
-                    case 10:
-                        gregorBox.Text = $"You thought you could beat me? Think again, youngster.";
-                        break;
-                    case 11:
-                        gregorBox.Text = $"You have much to learn, but I'll teach you.";
-                        break;
-                    case 12:
-                        gregorBox.Text = $"I could play this game with my eyes closed and still win.";
-                        break;
-                    case 13:
-                        gregorBox.Text = $"You're not the first one to fall victim to my skills, and you won't be the last.";
-                        break;
-                    case 14:
-                        gregorBox.Text = $"You'll have to try harder than that to beat me, comrade.";
-                        break;
-                    case 15:
-                        gregorBox.Text = $"You're not a worthy opponent, but I like winning from you.";
-                        break;
-                    case 16:
-                        gregorBox.Text = $"I could win this game with one hand tied behind my back.";
-                        break;
-                    case 17:
-                        gregorBox.Text = $"You're outmatched, my friend. It's time to concede.";
-                        break;
-                    case 18:
-                        gregorBox.Text = $"I win again! You might as well give up now.";
-                        break;
-                    case 19:
-                        gregorBox.Text = $"You thought you had a chance? Ha! You're no match for me.";
-                        break;
-                    case 20:
-                        gregorBox.Text = $"Victory is mine once again! You need more than luck to beat me, my friend.";
-                        break;
-                }
-            }
+            gregorBox.Text = list[r];
         }
     }
 }
