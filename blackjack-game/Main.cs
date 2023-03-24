@@ -622,7 +622,7 @@ namespace blackjack_game
             int r;
             do
             {
-                r = random.Next(0, list.Count + 1);
+                r = random.Next(0, list.Count);
             } while (r == prevRandom);
 
             prevRandom = r;
