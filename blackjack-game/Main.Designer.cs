@@ -29,174 +29,174 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
-            this.btn_hit = new System.Windows.Forms.Button();
-            this.btn_stand = new System.Windows.Forms.Button();
-            this.btn_increaseBet = new System.Windows.Forms.Button();
-            this.btn_decreaseBet = new System.Windows.Forms.Button();
-            this.lbl_totalBet = new System.Windows.Forms.Label();
-            this.lbl_betAmount = new System.Windows.Forms.Label();
-            this.pb_banker = new System.Windows.Forms.PictureBox();
-            this.pb_player = new System.Windows.Forms.PictureBox();
-            this.pb_player1 = new System.Windows.Forms.PictureBox();
+            this.btnHit = new System.Windows.Forms.Button();
+            this.btnStand = new System.Windows.Forms.Button();
+            this.btnIncreaseBet = new System.Windows.Forms.Button();
+            this.btnDecreaseBet = new System.Windows.Forms.Button();
+            this.lblTotalBet = new System.Windows.Forms.Label();
+            this.lblBetAmount = new System.Windows.Forms.Label();
+            this.pbxBanker = new System.Windows.Forms.PictureBox();
+            this.pbxPlayer = new System.Windows.Forms.PictureBox();
+            this.pbxPlayer1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gregorBox = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl_status = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.historyTree = new System.Windows.Forms.TreeView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btn_menu = new System.Windows.Forms.Button();
-            this.lbl_xp = new System.Windows.Forms.Label();
-            this.lbl_balance = new System.Windows.Forms.Label();
-            this.pnl_settings = new System.Windows.Forms.Panel();
+            this.btnMenu = new System.Windows.Forms.Button();
+            this.lblXp = new System.Windows.Forms.Label();
+            this.lblBalance = new System.Windows.Forms.Label();
+            this.pnlSettings = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btn_github = new System.Windows.Forms.Button();
-            this.btn_website = new System.Windows.Forms.Button();
-            this.gb_resources = new System.Windows.Forms.GroupBox();
+            this.btnGithub = new System.Windows.Forms.Button();
+            this.btnWebsite = new System.Windows.Forms.Button();
+            this.gbxResources = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.btn_resources = new System.Windows.Forms.Button();
+            this.btnResources = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_reset = new System.Windows.Forms.Button();
-            this.gb_howtoplay = new System.Windows.Forms.GroupBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.gbxHowToPlay = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.gb_gamespeed = new System.Windows.Forms.GroupBox();
-            this.rb_speed2500 = new System.Windows.Forms.RadioButton();
-            this.rb_speed1000 = new System.Windows.Forms.RadioButton();
-            this.rb_speed500 = new System.Windows.Forms.RadioButton();
-            this.rb_speed250 = new System.Windows.Forms.RadioButton();
-            this.rb_speed100 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).BeginInit();
+            this.gbxGameSpeed = new System.Windows.Forms.GroupBox();
+            this.rbnSpeed2500 = new System.Windows.Forms.RadioButton();
+            this.rbnSpeed1000 = new System.Windows.Forms.RadioButton();
+            this.rbnSpeed500 = new System.Windows.Forms.RadioButton();
+            this.rbnSpeed250 = new System.Windows.Forms.RadioButton();
+            this.rbnSpeed100 = new System.Windows.Forms.RadioButton();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBanker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayer1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.pnl_settings.SuspendLayout();
+            this.pnlSettings.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.gb_resources.SuspendLayout();
+            this.gbxResources.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gb_howtoplay.SuspendLayout();
-            this.gb_gamespeed.SuspendLayout();
+            this.gbxHowToPlay.SuspendLayout();
+            this.gbxGameSpeed.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_hit
             // 
-            this.btn_hit.FlatAppearance.BorderSize = 0;
-            this.btn_hit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_hit.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_hit.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_hit.Location = new System.Drawing.Point(3, 3);
-            this.btn_hit.Name = "btn_hit";
-            this.btn_hit.Size = new System.Drawing.Size(125, 50);
-            this.btn_hit.TabIndex = 2;
-            this.btn_hit.Text = "Hit";
-            this.btn_hit.UseVisualStyleBackColor = false;
-            this.btn_hit.Click += new System.EventHandler(this.btn_hit_Click);
+            this.btnHit.FlatAppearance.BorderSize = 0;
+            this.btnHit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHit.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnHit.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnHit.Location = new System.Drawing.Point(3, 3);
+            this.btnHit.Name = "btn_hit";
+            this.btnHit.Size = new System.Drawing.Size(125, 50);
+            this.btnHit.TabIndex = 2;
+            this.btnHit.Text = "Hit";
+            this.btnHit.UseVisualStyleBackColor = false;
+            this.btnHit.Click += new System.EventHandler(this.btn_hit_Click);
             // 
             // btn_stand
             // 
-            this.btn_stand.Enabled = false;
-            this.btn_stand.FlatAppearance.BorderSize = 0;
-            this.btn_stand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_stand.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_stand.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_stand.Location = new System.Drawing.Point(134, 3);
-            this.btn_stand.Name = "btn_stand";
-            this.btn_stand.Size = new System.Drawing.Size(125, 50);
-            this.btn_stand.TabIndex = 3;
-            this.btn_stand.Text = "Stand";
-            this.btn_stand.UseVisualStyleBackColor = false;
-            this.btn_stand.Click += new System.EventHandler(this.btn_stand_Click);
+            this.btnStand.Enabled = false;
+            this.btnStand.FlatAppearance.BorderSize = 0;
+            this.btnStand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStand.Font = new System.Drawing.Font("Work Sans Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnStand.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnStand.Location = new System.Drawing.Point(134, 3);
+            this.btnStand.Name = "btn_stand";
+            this.btnStand.Size = new System.Drawing.Size(125, 50);
+            this.btnStand.TabIndex = 3;
+            this.btnStand.Text = "Stand";
+            this.btnStand.UseVisualStyleBackColor = false;
+            this.btnStand.Click += new System.EventHandler(this.btn_stand_Click);
             // 
             // btn_increaseBet
             // 
-            this.btn_increaseBet.FlatAppearance.BorderSize = 0;
-            this.btn_increaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_increaseBet.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_increaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_increaseBet.Location = new System.Drawing.Point(329, 3);
-            this.btn_increaseBet.Name = "btn_increaseBet";
-            this.btn_increaseBet.Size = new System.Drawing.Size(50, 25);
-            this.btn_increaseBet.TabIndex = 4;
-            this.btn_increaseBet.Text = "↑";
-            this.btn_increaseBet.UseVisualStyleBackColor = true;
-            this.btn_increaseBet.Click += new System.EventHandler(this.btn_increaseBet_Click);
+            this.btnIncreaseBet.FlatAppearance.BorderSize = 0;
+            this.btnIncreaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIncreaseBet.Font = new System.Drawing.Font("Segoe UI Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnIncreaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnIncreaseBet.Location = new System.Drawing.Point(329, 3);
+            this.btnIncreaseBet.Name = "btn_increaseBet";
+            this.btnIncreaseBet.Size = new System.Drawing.Size(50, 25);
+            this.btnIncreaseBet.TabIndex = 4;
+            this.btnIncreaseBet.Text = "↑";
+            this.btnIncreaseBet.UseVisualStyleBackColor = true;
+            this.btnIncreaseBet.Click += new System.EventHandler(this.btnIncreaseBet_Click);
             // 
             // btn_decreaseBet
             // 
-            this.btn_decreaseBet.FlatAppearance.BorderSize = 0;
-            this.btn_decreaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_decreaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_decreaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_decreaseBet.Location = new System.Drawing.Point(329, 28);
-            this.btn_decreaseBet.Name = "btn_decreaseBet";
-            this.btn_decreaseBet.Size = new System.Drawing.Size(50, 25);
-            this.btn_decreaseBet.TabIndex = 5;
-            this.btn_decreaseBet.Text = "↓";
-            this.btn_decreaseBet.UseVisualStyleBackColor = true;
-            this.btn_decreaseBet.Click += new System.EventHandler(this.btn_decreaseBet_Click);
+            this.btnDecreaseBet.FlatAppearance.BorderSize = 0;
+            this.btnDecreaseBet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecreaseBet.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDecreaseBet.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnDecreaseBet.Location = new System.Drawing.Point(329, 28);
+            this.btnDecreaseBet.Name = "btn_decreaseBet";
+            this.btnDecreaseBet.Size = new System.Drawing.Size(50, 25);
+            this.btnDecreaseBet.TabIndex = 5;
+            this.btnDecreaseBet.Text = "↓";
+            this.btnDecreaseBet.UseVisualStyleBackColor = true;
+            this.btnDecreaseBet.Click += new System.EventHandler(this.btn_decreaseBet_Click);
             // 
             // lbl_totalBet
             // 
-            this.lbl_totalBet.AutoSize = true;
-            this.lbl_totalBet.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_totalBet.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_totalBet.Location = new System.Drawing.Point(385, 3);
-            this.lbl_totalBet.Name = "lbl_totalBet";
-            this.lbl_totalBet.Size = new System.Drawing.Size(65, 17);
-            this.lbl_totalBet.TabIndex = 6;
-            this.lbl_totalBet.Text = "Total bet:";
+            this.lblTotalBet.AutoSize = true;
+            this.lblTotalBet.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotalBet.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotalBet.Location = new System.Drawing.Point(385, 3);
+            this.lblTotalBet.Name = "lbl_totalBet";
+            this.lblTotalBet.Size = new System.Drawing.Size(65, 17);
+            this.lblTotalBet.TabIndex = 6;
+            this.lblTotalBet.Text = "Total bet:";
             // 
             // lbl_betAmount
             // 
-            this.lbl_betAmount.AutoSize = true;
-            this.lbl_betAmount.Font = new System.Drawing.Font("Work Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_betAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_betAmount.Location = new System.Drawing.Point(385, 18);
-            this.lbl_betAmount.Name = "lbl_betAmount";
-            this.lbl_betAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_betAmount.Size = new System.Drawing.Size(202, 35);
-            this.lbl_betAmount.TabIndex = 7;
-            this.lbl_betAmount.Text = "${BETAMOUNT}";
-            this.lbl_betAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBetAmount.AutoSize = true;
+            this.lblBetAmount.Font = new System.Drawing.Font("Work Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBetAmount.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblBetAmount.Location = new System.Drawing.Point(385, 18);
+            this.lblBetAmount.Name = "lbl_betAmount";
+            this.lblBetAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblBetAmount.Size = new System.Drawing.Size(202, 35);
+            this.lblBetAmount.TabIndex = 7;
+            this.lblBetAmount.Text = "${BETAMOUNT}";
+            this.lblBetAmount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pb_banker
             // 
-            this.pb_banker.Location = new System.Drawing.Point(12, 41);
-            this.pb_banker.Name = "pb_banker";
-            this.pb_banker.Size = new System.Drawing.Size(108, 144);
-            this.pb_banker.TabIndex = 0;
-            this.pb_banker.TabStop = false;
+            this.pbxBanker.Location = new System.Drawing.Point(12, 41);
+            this.pbxBanker.Name = "pb_banker";
+            this.pbxBanker.Size = new System.Drawing.Size(108, 144);
+            this.pbxBanker.TabIndex = 0;
+            this.pbxBanker.TabStop = false;
             // 
             // pb_player
             // 
-            this.pb_player.Location = new System.Drawing.Point(12, 191);
-            this.pb_player.Name = "pb_player";
-            this.pb_player.Size = new System.Drawing.Size(108, 144);
-            this.pb_player.TabIndex = 1;
-            this.pb_player.TabStop = false;
+            this.pbxPlayer.Location = new System.Drawing.Point(12, 191);
+            this.pbxPlayer.Name = "pb_player";
+            this.pbxPlayer.Size = new System.Drawing.Size(108, 144);
+            this.pbxPlayer.TabIndex = 1;
+            this.pbxPlayer.TabStop = false;
             // 
             // pb_player1
             // 
-            this.pb_player1.Location = new System.Drawing.Point(126, 191);
-            this.pb_player1.Name = "pb_player1";
-            this.pb_player1.Size = new System.Drawing.Size(108, 144);
-            this.pb_player1.TabIndex = 2;
-            this.pb_player1.TabStop = false;
+            this.pbxPlayer1.Location = new System.Drawing.Point(126, 191);
+            this.pbxPlayer1.Name = "pb_player1";
+            this.pbxPlayer1.Size = new System.Drawing.Size(108, 144);
+            this.pbxPlayer1.TabIndex = 2;
+            this.pbxPlayer1.TabStop = false;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel1.Controls.Add(this.btn_stand);
-            this.panel1.Controls.Add(this.lbl_totalBet);
-            this.panel1.Controls.Add(this.lbl_betAmount);
-            this.panel1.Controls.Add(this.btn_hit);
-            this.panel1.Controls.Add(this.btn_increaseBet);
-            this.panel1.Controls.Add(this.btn_decreaseBet);
+            this.panel1.Controls.Add(this.btnStand);
+            this.panel1.Controls.Add(this.lblTotalBet);
+            this.panel1.Controls.Add(this.lblBetAmount);
+            this.panel1.Controls.Add(this.btnHit);
+            this.panel1.Controls.Add(this.btnIncreaseBet);
+            this.panel1.Controls.Add(this.btnDecreaseBet);
             this.panel1.Location = new System.Drawing.Point(12, 492);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(590, 57);
@@ -247,19 +247,19 @@
             // 
             // lbl_status
             // 
-            this.lbl_status.AutoSize = true;
-            this.lbl_status.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_status.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_status.Location = new System.Drawing.Point(3, 3);
-            this.lbl_status.Name = "lbl_status";
-            this.lbl_status.Size = new System.Drawing.Size(279, 19);
-            this.lbl_status.TabIndex = 10;
-            this.lbl_status.Text = "[Press Start to start a game!]";
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblStatus.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblStatus.Location = new System.Drawing.Point(3, 3);
+            this.lblStatus.Name = "lbl_status";
+            this.lblStatus.Size = new System.Drawing.Size(279, 19);
+            this.lblStatus.TabIndex = 10;
+            this.lblStatus.Text = "[Press Start to start a game!]";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel3.Controls.Add(this.lbl_status);
+            this.panel3.Controls.Add(this.lblStatus);
             this.panel3.Location = new System.Drawing.Point(12, 341);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(590, 25);
@@ -282,9 +282,9 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.panel4.Controls.Add(this.btn_menu);
-            this.panel4.Controls.Add(this.lbl_xp);
-            this.panel4.Controls.Add(this.lbl_balance);
+            this.panel4.Controls.Add(this.btnMenu);
+            this.panel4.Controls.Add(this.lblXp);
+            this.panel4.Controls.Add(this.lblBalance);
             this.panel4.Location = new System.Drawing.Point(12, 12);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(860, 23);
@@ -292,57 +292,57 @@
             // 
             // btn_menu
             // 
-            this.btn_menu.FlatAppearance.BorderSize = 0;
-            this.btn_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_menu.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_menu.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_menu.Location = new System.Drawing.Point(785, 0);
-            this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(75, 23);
-            this.btn_menu.TabIndex = 14;
-            this.btn_menu.Text = "Menu";
-            this.btn_menu.UseVisualStyleBackColor = true;
-            this.btn_menu.Click += new System.EventHandler(this.button1_Click);
+            this.btnMenu.FlatAppearance.BorderSize = 0;
+            this.btnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenu.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnMenu.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMenu.Location = new System.Drawing.Point(785, 0);
+            this.btnMenu.Name = "btn_menu";
+            this.btnMenu.Size = new System.Drawing.Size(75, 23);
+            this.btnMenu.TabIndex = 14;
+            this.btnMenu.Text = "Menu";
+            this.btnMenu.UseVisualStyleBackColor = true;
+            this.btnMenu.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbl_xp
             // 
-            this.lbl_xp.AutoSize = true;
-            this.lbl_xp.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_xp.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_xp.Location = new System.Drawing.Point(219, 3);
-            this.lbl_xp.Name = "lbl_xp";
-            this.lbl_xp.Size = new System.Drawing.Size(27, 17);
-            this.lbl_xp.TabIndex = 1;
-            this.lbl_xp.Text = "XP:";
+            this.lblXp.AutoSize = true;
+            this.lblXp.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblXp.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblXp.Location = new System.Drawing.Point(219, 3);
+            this.lblXp.Name = "lbl_xp";
+            this.lblXp.Size = new System.Drawing.Size(27, 17);
+            this.lblXp.TabIndex = 1;
+            this.lblXp.Text = "XP:";
             // 
             // lbl_balance
             // 
-            this.lbl_balance.AutoSize = true;
-            this.lbl_balance.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_balance.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lbl_balance.Location = new System.Drawing.Point(3, 3);
-            this.lbl_balance.Name = "lbl_balance";
-            this.lbl_balance.Size = new System.Drawing.Size(92, 17);
-            this.lbl_balance.TabIndex = 0;
-            this.lbl_balance.Text = "Balance: $100";
+            this.lblBalance.AutoSize = true;
+            this.lblBalance.Font = new System.Drawing.Font("Work Sans Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblBalance.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblBalance.Location = new System.Drawing.Point(3, 3);
+            this.lblBalance.Name = "lbl_balance";
+            this.lblBalance.Size = new System.Drawing.Size(92, 17);
+            this.lblBalance.TabIndex = 0;
+            this.lblBalance.Text = "Balance: $100";
             // 
             // pnl_settings
             // 
-            this.pnl_settings.Controls.Add(this.groupBox2);
-            this.pnl_settings.Controls.Add(this.gb_resources);
-            this.pnl_settings.Controls.Add(this.groupBox1);
-            this.pnl_settings.Controls.Add(this.gb_howtoplay);
-            this.pnl_settings.Controls.Add(this.gb_gamespeed);
-            this.pnl_settings.Location = new System.Drawing.Point(12, 41);
-            this.pnl_settings.Name = "pnl_settings";
-            this.pnl_settings.Size = new System.Drawing.Size(860, 508);
-            this.pnl_settings.TabIndex = 14;
-            this.pnl_settings.Visible = false;
+            this.pnlSettings.Controls.Add(this.groupBox2);
+            this.pnlSettings.Controls.Add(this.gbxResources);
+            this.pnlSettings.Controls.Add(this.groupBox1);
+            this.pnlSettings.Controls.Add(this.gbxHowToPlay);
+            this.pnlSettings.Controls.Add(this.gbxGameSpeed);
+            this.pnlSettings.Location = new System.Drawing.Point(12, 41);
+            this.pnlSettings.Name = "pnl_settings";
+            this.pnlSettings.Size = new System.Drawing.Size(860, 508);
+            this.pnlSettings.TabIndex = 14;
+            this.pnlSettings.Visible = false;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btn_github);
-            this.groupBox2.Controls.Add(this.btn_website);
+            this.groupBox2.Controls.Add(this.btnGithub);
+            this.groupBox2.Controls.Add(this.btnWebsite);
             this.groupBox2.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(3, 366);
@@ -354,46 +354,46 @@
             // 
             // btn_github
             // 
-            this.btn_github.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.btn_github.FlatAppearance.BorderSize = 0;
-            this.btn_github.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_github.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_github.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_github.Location = new System.Drawing.Point(7, 51);
-            this.btn_github.Name = "btn_github";
-            this.btn_github.Size = new System.Drawing.Size(113, 23);
-            this.btn_github.TabIndex = 16;
-            this.btn_github.Text = "My Github";
-            this.btn_github.UseVisualStyleBackColor = false;
-            this.btn_github.Click += new System.EventHandler(this.btn_github_Click);
+            this.btnGithub.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btnGithub.FlatAppearance.BorderSize = 0;
+            this.btnGithub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGithub.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnGithub.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnGithub.Location = new System.Drawing.Point(7, 51);
+            this.btnGithub.Name = "btn_github";
+            this.btnGithub.Size = new System.Drawing.Size(113, 23);
+            this.btnGithub.TabIndex = 16;
+            this.btnGithub.Text = "My Github";
+            this.btnGithub.UseVisualStyleBackColor = false;
+            this.btnGithub.Click += new System.EventHandler(this.btn_github_Click);
             // 
             // btn_website
             // 
-            this.btn_website.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.btn_website.FlatAppearance.BorderSize = 0;
-            this.btn_website.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_website.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_website.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_website.Location = new System.Drawing.Point(7, 22);
-            this.btn_website.Name = "btn_website";
-            this.btn_website.Size = new System.Drawing.Size(113, 23);
-            this.btn_website.TabIndex = 15;
-            this.btn_website.Text = "My website";
-            this.btn_website.UseVisualStyleBackColor = false;
-            this.btn_website.Click += new System.EventHandler(this.btn_website_Click);
+            this.btnWebsite.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btnWebsite.FlatAppearance.BorderSize = 0;
+            this.btnWebsite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnWebsite.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnWebsite.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnWebsite.Location = new System.Drawing.Point(7, 22);
+            this.btnWebsite.Name = "btn_website";
+            this.btnWebsite.Size = new System.Drawing.Size(113, 23);
+            this.btnWebsite.TabIndex = 15;
+            this.btnWebsite.Text = "My website";
+            this.btnWebsite.UseVisualStyleBackColor = false;
+            this.btnWebsite.Click += new System.EventHandler(this.btn_website_Click);
             // 
             // gb_resources
             // 
-            this.gb_resources.Controls.Add(this.textBox2);
-            this.gb_resources.Controls.Add(this.btn_resources);
-            this.gb_resources.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gb_resources.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gb_resources.Location = new System.Drawing.Point(132, 205);
-            this.gb_resources.Name = "gb_resources";
-            this.gb_resources.Size = new System.Drawing.Size(247, 155);
-            this.gb_resources.TabIndex = 16;
-            this.gb_resources.TabStop = false;
-            this.gb_resources.Text = "Resources";
+            this.gbxResources.Controls.Add(this.textBox2);
+            this.gbxResources.Controls.Add(this.btnResources);
+            this.gbxResources.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gbxResources.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxResources.Location = new System.Drawing.Point(132, 205);
+            this.gbxResources.Name = "gb_resources";
+            this.gbxResources.Size = new System.Drawing.Size(247, 155);
+            this.gbxResources.TabIndex = 16;
+            this.gbxResources.TabStop = false;
+            this.gbxResources.Text = "Resources";
             // 
             // textBox2
             // 
@@ -411,22 +411,22 @@
             // 
             // btn_resources
             // 
-            this.btn_resources.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.btn_resources.FlatAppearance.BorderSize = 0;
-            this.btn_resources.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_resources.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_resources.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_resources.Location = new System.Drawing.Point(128, 126);
-            this.btn_resources.Name = "btn_resources";
-            this.btn_resources.Size = new System.Drawing.Size(113, 23);
-            this.btn_resources.TabIndex = 15;
-            this.btn_resources.Text = "Open folder";
-            this.btn_resources.UseVisualStyleBackColor = false;
-            this.btn_resources.Click += new System.EventHandler(this.btn_resources_Click);
+            this.btnResources.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btnResources.FlatAppearance.BorderSize = 0;
+            this.btnResources.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResources.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnResources.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnResources.Location = new System.Drawing.Point(128, 126);
+            this.btnResources.Name = "btn_resources";
+            this.btnResources.Size = new System.Drawing.Size(113, 23);
+            this.btnResources.TabIndex = 15;
+            this.btnResources.Text = "Open folder";
+            this.btnResources.UseVisualStyleBackColor = false;
+            this.btnResources.Click += new System.EventHandler(this.btn_resources_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_reset);
+            this.groupBox1.Controls.Add(this.btnReset);
             this.groupBox1.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox1.Location = new System.Drawing.Point(732, 454);
@@ -438,30 +438,30 @@
             // 
             // btn_reset
             // 
-            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
-            this.btn_reset.FlatAppearance.BorderSize = 0;
-            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reset.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_reset.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_reset.Location = new System.Drawing.Point(6, 22);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(113, 23);
-            this.btn_reset.TabIndex = 15;
-            this.btn_reset.Text = "Reset data";
-            this.btn_reset.UseVisualStyleBackColor = false;
-            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
+            this.btnReset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(60)))));
+            this.btnReset.FlatAppearance.BorderSize = 0;
+            this.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReset.Font = new System.Drawing.Font("Work Sans Medium", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnReset.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnReset.Location = new System.Drawing.Point(6, 22);
+            this.btnReset.Name = "btn_reset";
+            this.btnReset.Size = new System.Drawing.Size(113, 23);
+            this.btnReset.TabIndex = 15;
+            this.btnReset.Text = "Reset data";
+            this.btnReset.UseVisualStyleBackColor = false;
+            this.btnReset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // gb_howtoplay
             // 
-            this.gb_howtoplay.Controls.Add(this.textBox1);
-            this.gb_howtoplay.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gb_howtoplay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gb_howtoplay.Location = new System.Drawing.Point(3, 3);
-            this.gb_howtoplay.Name = "gb_howtoplay";
-            this.gb_howtoplay.Size = new System.Drawing.Size(854, 196);
-            this.gb_howtoplay.TabIndex = 5;
-            this.gb_howtoplay.TabStop = false;
-            this.gb_howtoplay.Text = "How to play";
+            this.gbxHowToPlay.Controls.Add(this.textBox1);
+            this.gbxHowToPlay.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gbxHowToPlay.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxHowToPlay.Location = new System.Drawing.Point(3, 3);
+            this.gbxHowToPlay.Name = "gb_howtoplay";
+            this.gbxHowToPlay.Size = new System.Drawing.Size(854, 196);
+            this.gbxHowToPlay.TabIndex = 5;
+            this.gbxHowToPlay.TabStop = false;
+            this.gbxHowToPlay.Text = "How to play";
             // 
             // textBox1
             // 
@@ -479,81 +479,81 @@
             // 
             // gb_gamespeed
             // 
-            this.gb_gamespeed.Controls.Add(this.rb_speed2500);
-            this.gb_gamespeed.Controls.Add(this.rb_speed1000);
-            this.gb_gamespeed.Controls.Add(this.rb_speed500);
-            this.gb_gamespeed.Controls.Add(this.rb_speed250);
-            this.gb_gamespeed.Controls.Add(this.rb_speed100);
-            this.gb_gamespeed.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gb_gamespeed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gb_gamespeed.Location = new System.Drawing.Point(3, 205);
-            this.gb_gamespeed.Name = "gb_gamespeed";
-            this.gb_gamespeed.Size = new System.Drawing.Size(125, 155);
-            this.gb_gamespeed.TabIndex = 0;
-            this.gb_gamespeed.TabStop = false;
-            this.gb_gamespeed.Text = "Game speed";
+            this.gbxGameSpeed.Controls.Add(this.rbnSpeed2500);
+            this.gbxGameSpeed.Controls.Add(this.rbnSpeed1000);
+            this.gbxGameSpeed.Controls.Add(this.rbnSpeed500);
+            this.gbxGameSpeed.Controls.Add(this.rbnSpeed250);
+            this.gbxGameSpeed.Controls.Add(this.rbnSpeed100);
+            this.gbxGameSpeed.Font = new System.Drawing.Font("Work Sans Medium", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.gbxGameSpeed.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbxGameSpeed.Location = new System.Drawing.Point(3, 205);
+            this.gbxGameSpeed.Name = "gb_gamespeed";
+            this.gbxGameSpeed.Size = new System.Drawing.Size(125, 155);
+            this.gbxGameSpeed.TabIndex = 0;
+            this.gbxGameSpeed.TabStop = false;
+            this.gbxGameSpeed.Text = "Game speed";
             // 
             // rb_speed2500
             // 
-            this.rb_speed2500.AutoSize = true;
-            this.rb_speed2500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rb_speed2500.Location = new System.Drawing.Point(6, 130);
-            this.rb_speed2500.Name = "rb_speed2500";
-            this.rb_speed2500.Size = new System.Drawing.Size(117, 21);
-            this.rb_speed2500.TabIndex = 4;
-            this.rb_speed2500.Text = "0.2x (Very slow)";
-            this.rb_speed2500.UseVisualStyleBackColor = true;
-            this.rb_speed2500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.rbnSpeed2500.AutoSize = true;
+            this.rbnSpeed2500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbnSpeed2500.Location = new System.Drawing.Point(6, 130);
+            this.rbnSpeed2500.Name = "rb_speed2500";
+            this.rbnSpeed2500.Size = new System.Drawing.Size(117, 21);
+            this.rbnSpeed2500.TabIndex = 4;
+            this.rbnSpeed2500.Text = "0.2x (Very slow)";
+            this.rbnSpeed2500.UseVisualStyleBackColor = true;
+            this.rbnSpeed2500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // rb_speed1000
             // 
-            this.rb_speed1000.AutoSize = true;
-            this.rb_speed1000.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rb_speed1000.Location = new System.Drawing.Point(6, 103);
-            this.rb_speed1000.Name = "rb_speed1000";
-            this.rb_speed1000.Size = new System.Drawing.Size(90, 21);
-            this.rb_speed1000.TabIndex = 3;
-            this.rb_speed1000.Text = "0.5x (Slow)";
-            this.rb_speed1000.UseVisualStyleBackColor = true;
-            this.rb_speed1000.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.rbnSpeed1000.AutoSize = true;
+            this.rbnSpeed1000.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbnSpeed1000.Location = new System.Drawing.Point(6, 103);
+            this.rbnSpeed1000.Name = "rb_speed1000";
+            this.rbnSpeed1000.Size = new System.Drawing.Size(90, 21);
+            this.rbnSpeed1000.TabIndex = 3;
+            this.rbnSpeed1000.Text = "0.5x (Slow)";
+            this.rbnSpeed1000.UseVisualStyleBackColor = true;
+            this.rbnSpeed1000.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // rb_speed500
             // 
-            this.rb_speed500.AutoSize = true;
-            this.rb_speed500.Checked = true;
-            this.rb_speed500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rb_speed500.Location = new System.Drawing.Point(6, 76);
-            this.rb_speed500.Name = "rb_speed500";
-            this.rb_speed500.Size = new System.Drawing.Size(102, 21);
-            this.rb_speed500.TabIndex = 2;
-            this.rb_speed500.TabStop = true;
-            this.rb_speed500.Text = "1.0x (Normal)";
-            this.rb_speed500.UseVisualStyleBackColor = true;
-            this.rb_speed500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.rbnSpeed500.AutoSize = true;
+            this.rbnSpeed500.Checked = true;
+            this.rbnSpeed500.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbnSpeed500.Location = new System.Drawing.Point(6, 76);
+            this.rbnSpeed500.Name = "rb_speed500";
+            this.rbnSpeed500.Size = new System.Drawing.Size(102, 21);
+            this.rbnSpeed500.TabIndex = 2;
+            this.rbnSpeed500.TabStop = true;
+            this.rbnSpeed500.Text = "1.0x (Normal)";
+            this.rbnSpeed500.UseVisualStyleBackColor = true;
+            this.rbnSpeed500.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // rb_speed250
             // 
-            this.rb_speed250.AutoSize = true;
-            this.rb_speed250.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rb_speed250.Location = new System.Drawing.Point(6, 49);
-            this.rb_speed250.Name = "rb_speed250";
-            this.rb_speed250.Size = new System.Drawing.Size(85, 21);
-            this.rb_speed250.TabIndex = 1;
-            this.rb_speed250.Text = "2.0x (Fast)";
-            this.rb_speed250.UseVisualStyleBackColor = true;
-            this.rb_speed250.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.rbnSpeed250.AutoSize = true;
+            this.rbnSpeed250.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbnSpeed250.Location = new System.Drawing.Point(6, 49);
+            this.rbnSpeed250.Name = "rb_speed250";
+            this.rbnSpeed250.Size = new System.Drawing.Size(85, 21);
+            this.rbnSpeed250.TabIndex = 1;
+            this.rbnSpeed250.Text = "2.0x (Fast)";
+            this.rbnSpeed250.UseVisualStyleBackColor = true;
+            this.rbnSpeed250.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // rb_speed100
             // 
-            this.rb_speed100.AutoSize = true;
-            this.rb_speed100.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rb_speed100.Location = new System.Drawing.Point(6, 22);
-            this.rb_speed100.Name = "rb_speed100";
-            this.rb_speed100.Size = new System.Drawing.Size(113, 21);
-            this.rb_speed100.TabIndex = 0;
-            this.rb_speed100.Text = "5.0x (Very fast)";
-            this.rb_speed100.UseVisualStyleBackColor = true;
-            this.rb_speed100.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            this.rbnSpeed100.AutoSize = true;
+            this.rbnSpeed100.Font = new System.Drawing.Font("Work Sans", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rbnSpeed100.Location = new System.Drawing.Point(6, 22);
+            this.rbnSpeed100.Name = "rb_speed100";
+            this.rbnSpeed100.Size = new System.Drawing.Size(113, 21);
+            this.rbnSpeed100.TabIndex = 0;
+            this.rbnSpeed100.Text = "5.0x (Very fast)";
+            this.rbnSpeed100.UseVisualStyleBackColor = true;
+            this.rbnSpeed100.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // Main
             // 
@@ -561,24 +561,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(50)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.pnl_settings);
+            this.Controls.Add(this.pnlSettings);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.historyTree);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pb_player1);
-            this.Controls.Add(this.pb_player);
-            this.Controls.Add(this.pb_banker);
+            this.Controls.Add(this.pbxPlayer1);
+            this.Controls.Add(this.pbxPlayer);
+            this.Controls.Add(this.pbxBanker);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(900, 600);
             this.MinimumSize = new System.Drawing.Size(900, 600);
             this.Name = "Main";
             this.Text = "Blackjack";
-            ((System.ComponentModel.ISupportInitialize)(this.pb_banker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pb_player1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBanker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxPlayer1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -588,57 +588,57 @@
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.pnl_settings.ResumeLayout(false);
+            this.pnlSettings.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            this.gb_resources.ResumeLayout(false);
-            this.gb_resources.PerformLayout();
+            this.gbxResources.ResumeLayout(false);
+            this.gbxResources.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.gb_howtoplay.ResumeLayout(false);
-            this.gb_howtoplay.PerformLayout();
-            this.gb_gamespeed.ResumeLayout(false);
-            this.gb_gamespeed.PerformLayout();
+            this.gbxHowToPlay.ResumeLayout(false);
+            this.gbxHowToPlay.PerformLayout();
+            this.gbxGameSpeed.ResumeLayout(false);
+            this.gbxGameSpeed.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Button btn_hit;
-        private Button btn_stand;
-        private Button btn_increaseBet;
-        private Button btn_decreaseBet;
-        private Label lbl_totalBet;
-        private Label lbl_betAmount;
-        private PictureBox pb_banker;
-        private PictureBox pb_player;
-        private PictureBox pb_player1;
+        private Button btnHit;
+        private Button btnStand;
+        private Button btnIncreaseBet;
+        private Button btnDecreaseBet;
+        private Label lblTotalBet;
+        private Label lblBetAmount;
+        private PictureBox pbxBanker;
+        private PictureBox pbxPlayer;
+        private PictureBox pbxPlayer1;
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Label lbl_status;
+        private Label lblStatus;
         private Panel panel3;
         private ColumnHeader Card;
         private TreeView historyTree;
         private Panel panel4;
-        private Label lbl_balance;
-        private Label lbl_xp;
-        private Button btn_menu;
-        private Panel pnl_settings;
-        private GroupBox gb_gamespeed;
-        private RadioButton rb_speed100;
-        private RadioButton rb_speed500;
-        private RadioButton rb_speed250;
-        private RadioButton rb_speed2500;
-        private RadioButton rb_speed1000;
-        private GroupBox gb_howtoplay;
+        private Label lblBalance;
+        private Label lblXp;
+        private Button btnMenu;
+        private Panel pnlSettings;
+        private GroupBox gbxGameSpeed;
+        private RadioButton rbnSpeed100;
+        private RadioButton rbnSpeed500;
+        private RadioButton rbnSpeed250;
+        private RadioButton rbnSpeed2500;
+        private RadioButton rbnSpeed1000;
+        private GroupBox gbxHowToPlay;
         private TextBox textBox1;
         private GroupBox groupBox1;
-        private Button btn_reset;
-        private GroupBox gb_resources;
+        private Button btnReset;
+        private GroupBox gbxResources;
         private TextBox textBox2;
-        private Button btn_resources;
+        private Button btnResources;
         private GroupBox groupBox2;
-        private Button btn_website;
-        private Button btn_github;
+        private Button btnWebsite;
+        private Button btnGithub;
         private Label gregorBox;
         private Label label1;
     }

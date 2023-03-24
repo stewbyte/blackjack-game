@@ -89,6 +89,7 @@ namespace blackjack_game
                 new Card() {Value = 11, Name = "Ace Hearts", Image = "Resources/Images/AH.png"}
         };
 
+        //Todo: meervoud
         List<PictureBox> dealerPictureBox = new List<PictureBox>();
         List<PictureBox> playerPictureBox = new List<PictureBox>();
 
@@ -116,22 +117,22 @@ namespace blackjack_game
         int ModifyBalance(int amount)
         {
             balance += amount;
-            lbl_balance.Text = $"Balance: ${balance}";
+            lblBalance.Text = $"Balance: ${balance}";
+
             return balance;
         }
 
         void UpdateBetLabel()
         {
-
             if (betAmount > 9)
             {
-                lbl_totalBet.Text = $"Max bet: ${balance}";
-                lbl_betAmount.Text = $"${betAmount}";
+                lblTotalBet.Text = $"Max bet: ${balance}";
+                lblBetAmount.Text = $"${betAmount}";
             }
             else
             {
-                lbl_totalBet.Text = $"Max bet: ${balance} - No XP gained!";
-                lbl_betAmount.Text = $"${betAmount}";
+                lblTotalBet.Text = $"Max bet: ${balance} - No XP gained!";
+                lblBetAmount.Text = $"${betAmount}";
             }
         }
 
@@ -163,14 +164,15 @@ namespace blackjack_game
 
         void EnableButtons(bool arg)
         {
-            btn_hit.Enabled = arg;
-            btn_stand.Enabled = arg;
+            //TodoL refactor
+            btnHit.Enabled = arg;
+            btnStand.Enabled = arg;
         }
 
         void EnableBetButtons(bool arg)
         {
-            btn_increaseBet.Enabled = arg;
-            btn_decreaseBet.Enabled = arg;
+            btnIncreaseBet.Enabled = arg;
+            btnDecreaseBet.Enabled = arg;
         }
 
         void ResetGame()
@@ -185,7 +187,7 @@ namespace blackjack_game
             dealerCards.Clear();
             EnableButtons(true);
             EnableBetButtons(true);
-            btn_stand.Enabled = false;
+            btnStand.Enabled = false;
 
             foreach (PictureBox pb in playerPictureBox)
             {
@@ -199,10 +201,9 @@ namespace blackjack_game
             }
             dealerPictureBox = new List<PictureBox>();
 
-
-            DisplayCardBack(pb_banker);
-            DisplayCardBack(pb_player);
-            DisplayCardBack(pb_player1);
+            DisplayCardBack(pbxBanker);
+            DisplayCardBack(pbxPlayer);
+            DisplayCardBack(pbxPlayer1);
 
             if (betAmount > balance)
             {
@@ -234,7 +235,7 @@ namespace blackjack_game
                 }
             }
 
-            lbl_status.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            lblStatus.Text = $"[{Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
         }
 
         int DrawRandomCard()
@@ -254,7 +255,7 @@ namespace blackjack_game
 
         void WinGame()
         {
-            lbl_status.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            lblStatus.Text = $"[You won! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             ModifyBalance(+(betAmount * 2) + 1);
 
             GregorTalk("annoyed");
@@ -269,12 +270,12 @@ namespace blackjack_game
                 LogToHistory($"Won");
             }
 
-            lbl_xp.Text = $"XP: {xp}";
+            lblXp.Text = $"XP: {xp}";
         }
 
         void LoseGame()
         {
-            lbl_status.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            lblStatus.Text = $"[You lost! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             GregorTalk("happy");
 
             if (betAmount >= 5)
@@ -289,7 +290,7 @@ namespace blackjack_game
 
         void TieGame()
         {
-            lbl_status.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
+            lblStatus.Text = $"[Standoff! {Environment.UserName} {playerCardSum} / {dealerCardSum} Gregor]";
             gregorBox.Text = "The odds!";
             LogToHistory($"Tied");
             ModifyBalance(+(betAmount));
@@ -299,9 +300,9 @@ namespace blackjack_game
         {
             ReadGameData();
             InitializeComponent();
-            lbl_balance.Text = $"Balance: ${balance}";
-            lbl_xp.Text = $"XP: {xp}";
-            lbl_status.Text = $"[Begin the game by pressing 'Hit']";
+            lblBalance.Text = $"Balance: ${balance}";
+            lblXp.Text = $"XP: {xp}";
+            lblStatus.Text = $"[Begin the game by pressing 'Hit']";
             GregorTalk("greet");
             UpdateBetLabel();
             ResetGame();
@@ -324,7 +325,7 @@ namespace blackjack_game
             }
         }
 
-        private void btn_increaseBet_Click(object sender, EventArgs e)
+        private void btnIncreaseBet_Click(object sender, EventArgs e)
         {
             if (ModifierKeys.HasFlag(Keys.Shift))
             {
@@ -387,8 +388,8 @@ namespace blackjack_game
             else
             {
                 gameStarted = true;
-                btn_stand.Enabled = true;
-                btn_hit.Text = "Hit";
+                btnStand.Enabled = true;
+                btnHit.Text = "Hit";
 
                 ModifyBalance(-betAmount);
 
@@ -401,20 +402,20 @@ namespace blackjack_game
                 Card card2 = cardDeck[holeCard2];
 
                 playerCards.Add(card1);
-                pb_player.ImageLocation = card1.Image;
-                pb_player.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbxPlayer.ImageLocation = card1.Image;
+                pbxPlayer.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 playerCards.Add(card2);
-                pb_player1.ImageLocation = card2.Image;
-                pb_player1.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbxPlayer1.ImageLocation = card2.Image;
+                pbxPlayer1.SizeMode = PictureBoxSizeMode.StretchImage;
 
                 int dealerHoleCard = DrawRandomCard();
 
                 Card card3 = cardDeck[dealerHoleCard];
 
                 dealerCards.Add(card3);
-                pb_banker.ImageLocation = card3.Image;
-                pb_banker.SizeMode = PictureBoxSizeMode.StretchImage;
+                pbxBanker.ImageLocation = card3.Image;
+                pbxBanker.SizeMode = PictureBoxSizeMode.StretchImage;
             }
 
             SumCards(playerCards, ref playerCardSum);
@@ -472,35 +473,35 @@ namespace blackjack_game
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (pnl_settings.Visible)
+            if (pnlSettings.Visible)
             {
-                pnl_settings.Hide();
+                pnlSettings.Hide();
             }
             else
             {
-                pnl_settings.Show();
+                pnlSettings.Show();
             }
         }
 
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_speed100.Checked)
+            if (rbnSpeed100.Checked)
             {
                 gameSpeed = 100;
             }
-            else if (rb_speed250.Checked)
+            else if (rbnSpeed250.Checked)
             {
                 gameSpeed = 250;
             }
-            else if (rb_speed500.Checked)
+            else if (rbnSpeed500.Checked)
             {
                 gameSpeed = 500;
             }
-            else if (rb_speed1000.Checked)
+            else if (rbnSpeed1000.Checked)
             {
                 gameSpeed = 1000;
             }
-            else if (rb_speed2500.Checked)
+            else if (rbnSpeed2500.Checked)
             {
                 gameSpeed = 2500;
             }
