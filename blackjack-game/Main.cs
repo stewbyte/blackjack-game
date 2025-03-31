@@ -605,12 +605,12 @@ namespace blackjack_game
 
         private void btnWebsite_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://www.stw.dev") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://stewbyte.com/") { UseShellExecute = true });
         }
 
         private void btnGithub_Click(object sender, EventArgs e)
         {
-            Process.Start(new ProcessStartInfo("https://github.com/Steffew") { UseShellExecute = true });
+            Process.Start(new ProcessStartInfo("https://github.com/stewbyte") { UseShellExecute = true });
         }
 
         void GregorTalk(List<string> list)
