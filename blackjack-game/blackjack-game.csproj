@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <RootNamespace>blackjack_game</RootNamespace>
+	<TargetFramework>net9.0-windows</TargetFramework>
+	<RootNamespace>blackjack_game</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
