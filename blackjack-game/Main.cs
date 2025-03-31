@@ -22,7 +22,7 @@ namespace blackjack_game
         $"Aha, {Environment.UserName}. I have heard about you.",
         "Finally, you are here.",
         "Is this my opponent? Should be a piece of Medovik.",
-        "Privet.",
+        "Hello, comrade.",
         "Well, well, well. A new challenger has arrived. Let's see what you're made of.",
         "Greetings, young one. You've come to face the master of the game.",
         "Aha, a brave one. You're not afraid to lose, are you?",
